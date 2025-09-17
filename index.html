@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALYSSIUN — Enter the Universe</title>
-  <meta name="description" content="ALYSSIUN — An open, immersive universe where anyone can access, create, and contribute." />
-  <meta name="theme-color" content="#0C1022" />
+  <title>ALYSSIUN</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
@@ -16,11 +14,11 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="site-nav" data-nav>
       <a href="/">Home</a>
-      <div class="has-sub" data-has-sub>
-        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
-        <div class="subnav" role="menu">
-          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
-          <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
+      <div class="dropdown">
+        <button class="dropbtn">Explore ▾</button>
+        <div class="dropdown-content">
+          <a href="/explore/3d-websites/">3D Websites</a>
+          <a href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
       <a href="/download/">Download</a>
@@ -33,22 +31,14 @@
 
 <section class="hero">
   <div class="wrap center">
-    <div class="tagline">ALYSSIUN UNIVERSE</div>
     <h1>You don’t just enter ALYSSIUN. You become part of it.</h1>
-    <p>Access worlds, apps, and VR experiences — or publish your creations and keep <b>80%</b>.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="/download/">Download for Windows</a>
-      <a class="btn dark" href="/explore/3d-websites/">Explore 3D Websites</a>
-    </div>
+    <a class="btn primary" href="/download/">Download</a>
   </div>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <div>ALYSSIUN — You don’t just enter it. You become part of it.</div>
-    <div class="fineprint">© 2025 ALYSSIUN Universe. All rights reserved.</div>
-  </div>
+  <div class="wrap">© 2025 ALYSSIUN Universe</div>
 </footer>
 </body>
 </html>

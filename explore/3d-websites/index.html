@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Websites — ALYSSIUN</title>
-  <meta name="description" content="ALYSSIUN — An open, immersive universe where anyone can access, create, and contribute." />
-  <meta name="theme-color" content="#0C1022" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
@@ -16,11 +14,11 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="site-nav" data-nav>
       <a href="/">Home</a>
-      <div class="has-sub" data-has-sub>
-        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
-        <div class="subnav" role="menu">
-          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
-          <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
+      <div class="dropdown">
+        <button class="dropbtn">Explore ▾</button>
+        <div class="dropdown-content">
+          <a href="/explore/3d-websites/">3D Websites</a>
+          <a href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
       <a href="/download/">Download</a>
@@ -34,69 +32,27 @@
 <section class="page-hero">
   <div class="wrap">
     <h1>Immersive 3D Experiences for Businesses</h1>
-    <p class="lead">Close more deals with interactive 3D — virtual cards, stores, and corporate metaverse experiences.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="#lead-form">Book a Free Demo</a>
-      <a class="btn dark" href="#lead-form">Get Started Today</a>
-    </div>
+    <p class="lead">Close deals with interactive, visual storytelling.</p>
   </div>
 </section>
-
-<section class="wrap grid3 offers">
-  <div class="card">
-    <h3>Virtual Business Cards</h3>
-    <div class="price">$95</div>
-    <p>Create a stunning 3D “business card” website your clients can explore.</p>
-  </div>
-  <div class="card">
-    <h3>Virtual Store Prototypes</h3>
-    <div class="price">$2,500</div>
-    <p>Showcase products, flows, and KPIs in a branded 3D store mockup.</p>
-  </div>
-  <div class="card">
-    <h3>Corporate Metaverse Experiences</h3>
-    <div class="price">$10k+</div>
-    <p>Events, trainings, and interactive campuses for teams and customers.</p>
-  </div>
-</section>
-
 <section class="wrap">
-  <h2>Proof</h2>
-  <p class="note">Trusted by teams building the future. See highlights below.</p>
-  <div class="portfolio-grid">
-    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">3D Card — Finance CEO</div></div>
-    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Virtual Store — Apparel</div></div>
-    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Corporate World — Onboarding</div></div>
-    <div class="pf-card video"><div class="pf-thumb"></div><div class="pf-caption">Video: ALYSSIUN Tour</div></div>
+  <h2>Our Offers</h2>
+  <ul class="bullets">
+    <li><b>Virtual Business Cards</b> — $95</li>
+    <li><b>Virtual Store Prototypes</b> — $2,500</li>
+    <li><b>Corporate Metaverse Experiences</b> — $10k+</li>
+  </ul>
+  <div class="cta-row">
+    <a class="btn primary" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx" target="_blank">Book a Free Demo</a>
+    <a class="btn dark" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx" target="_blank">Get Started Today</a>
   </div>
-</section>
-
-<section id="lead-form" class="wrap lead">
-  <h2>Talk to a Specialist</h2>
-  <p class="note">Tell us what you want to build — we’ll reply with a demo link.</p>
-  <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-    <label>Name<input type="text" name="name" required></label>
-    <label>Email<input type="email" name="email" required></label>
-    <label>Company<input type="text" name="company"></label>
-    <label>Project Type
-      <select name="project">
-        <option>Virtual Business Card ($95)</option>
-        <option>Virtual Store Prototype ($2,500)</option>
-        <option>Corporate Metaverse ($10k+)</option>
-        <option>Other</option>
-      </select>
-    </label>
-    <label>Message<textarea name="message" rows="5" placeholder="What do you want to build?"></textarea></label>
-    <button class="btn primary" type="submit">Book a Free Demo</button>
-  </form>
+  <h2>Proof</h2>
+  <p>Trusted by businesses worldwide — testimonials, portfolio images, and video demos available.</p>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <div>ALYSSIUN — You don’t just enter it. You become part of it.</div>
-    <div class="fineprint">© 2025 ALYSSIUN Universe. All rights reserved.</div>
-  </div>
+  <div class="wrap">© 2025 ALYSSIUN Universe</div>
 </footer>
 </body>
 </html>
