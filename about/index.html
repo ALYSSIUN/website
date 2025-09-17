@@ -16,7 +16,13 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="site-nav" data-nav>
       <a href="/">Home</a>
-      <a href="/explore/">Explore</a>
+      <div class="has-sub" data-has-sub>
+        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
+        <div class="subnav" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/sellers/">Sellers</a>
+        </div>
+      </div>
       <a href="/download/">Download</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact Us</a>

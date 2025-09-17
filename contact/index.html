@@ -16,7 +16,13 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="site-nav" data-nav>
       <a href="/">Home</a>
-      <a href="/explore/">Explore</a>
+      <div class="has-sub" data-has-sub>
+        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
+        <div class="subnav" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/sellers/">Sellers</a>
+        </div>
+      </div>
       <a href="/download/">Download</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact Us</a>
@@ -28,18 +34,16 @@
 <section class="page-hero">
   <div class="wrap">
     <h1>Contact Us</h1>
-    <p class="lead">Questions, partnerships, or submissions — we’d love to hear from you.</p>
+    <p class="lead">Join our community to connect with the team and other creators.</p>
   </div>
 </section>
 
-<section class="wrap">
-  <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-    <label>Name<input type="text" name="name" required></label>
-    <label>Email<input type="email" name="email" required></label>
-    <label>Message<textarea name="message" rows="5" required></textarea></label>
-    <button class="btn primary" type="submit">Send</button>
-    <p class="note">Tip: Replace the form action with your Formspree ID or backend endpoint.</p>
-  </form>
+<section class="wrap center" style="padding:24px 0 40px;">
+  <div class="cta-row" style="justify-content:center;">
+    <a class="btn primary" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx" target="_blank" rel="noopener">Join WhatsApp Group</a>
+    <a class="btn dark" href="https://discord.gg/9WnrN9QCgJ" target="_blank" rel="noopener">Join Discord</a>
+  </div>
+  <p class="note" style="margin-top:12px;">Tap a button to open the community in a new tab.</p>
 </section>
 
 </main>

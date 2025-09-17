@@ -16,7 +16,13 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="site-nav" data-nav>
       <a href="/">Home</a>
-      <a href="/explore/">Explore</a>
+      <div class="has-sub" data-has-sub>
+        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
+        <div class="subnav" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/sellers/">Sellers</a>
+        </div>
+      </div>
       <a href="/download/">Download</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact Us</a>
@@ -28,21 +34,12 @@
 <section class="page-hero">
   <div class="wrap">
     <h1>Explore</h1>
-    <p class="lead">Discover ALYSSIUN’s <b>3D Websites</b> — fast, browser-friendly experiences powered by LITE.</p>
+    <p class="lead">Choose a section from the Explore menu.</p>
   </div>
 </section>
-
-<section class="wrap">
-  <h2>3D Websites</h2>
-  <p>Interactive sites you can rotate, zoom, and enter instantly. Ideal for portfolios, product demos, and virtual spaces.</p>
-  <ul class="bullets">
-    <li>Loads in your browser — no install</li>
-    <li>WASD + mouse look navigation</li>
-    <li>Share with a simple link</li>
-  </ul>
-  <div class="cta-row">
-    <a class="btn" href="/download/">Get ALYSSIUN LITE / HD</a>
-  </div>
+<section class="wrap cards">
+  <a class="card" href="/explore/3d-websites/"><h3>3D Websites</h3><p>Fast, browser-friendly immersive sites you can rotate, zoom, and navigate.</p></a>
+  <a class="card" href="/explore/sellers/"><h3>Sellers</h3><p>Become a seller in ALYSSIUN: share assets, apps, and worlds.</p></a>
 </section>
 
 </main>
