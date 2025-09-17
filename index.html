@@ -3,27 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALYSSIUN</title>
+  <title>ALYSSIUN — Enter the Universe</title>
+  <meta name="description" content="ALYSSIUN — Immersive 3D experiences." />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a class="brand" href="/">ALYSSIUN</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" data-nav>
-      <a href="/">Home</a>
-      <div class="dropdown">
-        <button class="dropbtn">Explore ▾</button>
-        <div class="dropdown-content">
-          <a href="/explore/3d-websites/">3D Websites</a>
-          <a href="/explore/join-sales-team/">Join Sales Team</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" data-nav role="navigation">
+      <a class="nav-link" href="/">Home</a>
+      <div class="dropdown" data-dropdown>
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Explore <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
-      <a href="/download/">Download</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact Us</a>
+      <a class="nav-link" href="/download/">Download</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/contact/">Contact Us</a>
     </nav>
   </div>
 </header>
@@ -31,14 +34,19 @@
 
 <section class="hero">
   <div class="wrap center">
+    <p class="tagline">ALYSSIUN UNIVERSE</p>
     <h1>You don’t just enter ALYSSIUN. You become part of it.</h1>
-    <a class="btn primary" href="/download/">Download</a>
+    <p class="lead">Immersive 3D worlds for everyone. Access, create, and earn.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="/download/">Download for Windows</a>
+      <a class="btn dark" href="/explore/3d-websites/">Explore 3D Websites</a>
+    </div>
   </div>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">© 2025 ALYSSIUN Universe</div>
+  <div class="wrap">© 2025 ALYSSIUN Universe — All rights reserved.</div>
 </footer>
 </body>
 </html>

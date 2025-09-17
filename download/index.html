@@ -4,28 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Download — ALYSSIUN</title>
-  <meta name="description" content="ALYSSIUN — An open, immersive universe where anyone can access, create, and contribute." />
-  <meta name="theme-color" content="#0C1022" />
+  <meta name="description" content="ALYSSIUN — Immersive 3D experiences." />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a class="brand" href="/">ALYSSIUN</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" data-nav>
-      <a href="/">Home</a>
-      <div class="has-sub" data-has-sub>
-        <button class="submenu-toggle" aria-expanded="false">Explore ▾</button>
-        <div class="subnav" role="menu">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" data-nav role="navigation">
+      <a class="nav-link" href="/">Home</a>
+      <div class="dropdown" data-dropdown>
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Explore <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <div class="dropdown-content" role="menu">
           <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
           <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
-      <a href="/download/">Download</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact Us</a>
+      <a class="nav-link" href="/download/">Download</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/contact/">Contact Us</a>
     </nav>
   </div>
 </header>
@@ -34,10 +35,9 @@
 <section class="page-hero">
   <div class="wrap">
     <h1>Download ALYSSIUN (Windows)</h1>
-    <p class="lead">Choose your experience. Quick install. No account required.</p>
+    <p class="lead">Quick install. No account required.</p>
   </div>
 </section>
-
 <section class="wrap grid3">
   <a class="dlbtn" href="https://alyssiun.s3.us-east-1.amazonaws.com/alyssiun-s1/setup/ALYSSIUN-S1.exe">
     <div><strong>ALYSSIUN S1</strong><div class="note">Entry world • Fast install</div></div>
@@ -51,15 +51,11 @@
     <div><strong>ALYSSIUN LITE VR</strong><div class="note">VR-ready LITE installer</div></div>
     <div class="btn dark center">Download</div>
   </a>
-  <p class="note" style="grid-column:1/-1;margin-top:10px;">Windows only. macOS + direct web access for LITE coming soon.</p>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <div>ALYSSIUN — You don’t just enter it. You become part of it.</div>
-    <div class="fineprint">© 2025 ALYSSIUN Universe. All rights reserved.</div>
-  </div>
+  <div class="wrap">© 2025 ALYSSIUN Universe — All rights reserved.</div>
 </footer>
 </body>
 </html>

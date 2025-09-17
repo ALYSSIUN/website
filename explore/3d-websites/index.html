@@ -4,26 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Websites — ALYSSIUN</title>
+  <meta name="description" content="ALYSSIUN — Immersive 3D experiences." />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a class="brand" href="/">ALYSSIUN</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" data-nav>
-      <a href="/">Home</a>
-      <div class="dropdown">
-        <button class="dropbtn">Explore ▾</button>
-        <div class="dropdown-content">
-          <a href="/explore/3d-websites/">3D Websites</a>
-          <a href="/explore/join-sales-team/">Join Sales Team</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" data-nav role="navigation">
+      <a class="nav-link" href="/">Home</a>
+      <div class="dropdown" data-dropdown>
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Explore <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
-      <a href="/download/">Download</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact Us</a>
+      <a class="nav-link" href="/download/">Download</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/contact/">Contact Us</a>
     </nav>
   </div>
 </header>
@@ -32,27 +35,45 @@
 <section class="page-hero">
   <div class="wrap">
     <h1>Immersive 3D Experiences for Businesses</h1>
-    <p class="lead">Close deals with interactive, visual storytelling.</p>
+    <p class="lead">Close deals with interactive 3D — visual storytelling that converts.</p>
+    <div class="cta-row">
+      <a class="btn primary" target="_blank" rel="noopener" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx">Book a Free Demo</a>
+      <a class="btn dark" target="_blank" rel="noopener" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx">Get Started Today</a>
+    </div>
+  </div>
+</section>
+<section class="wrap offers">
+  <div class="cards three">
+    <div class="card">
+      <h3>Virtual Business Cards</h3>
+      <div class="price">$95</div>
+      <p>Stand out with an interactive 3D card your clients can explore.</p>
+    </div>
+    <div class="card">
+      <h3>Virtual Store Prototypes</h3>
+      <div class="price">$2,500</div>
+      <p>Preview products and flows in a 3D store — perfect for pitches.</p>
+    </div>
+    <div class="card">
+      <h3>Corporate Metaverse Experiences</h3>
+      <div class="price">$10k+</div>
+      <p>Events, onboarding, and campuses built for teams and customers.</p>
+    </div>
   </div>
 </section>
 <section class="wrap">
-  <h2>Our Offers</h2>
-  <ul class="bullets">
-    <li><b>Virtual Business Cards</b> — $95</li>
-    <li><b>Virtual Store Prototypes</b> — $2,500</li>
-    <li><b>Corporate Metaverse Experiences</b> — $10k+</li>
-  </ul>
-  <div class="cta-row">
-    <a class="btn primary" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx" target="_blank">Book a Free Demo</a>
-    <a class="btn dark" href="https://chat.whatsapp.com/H8xA5og1xKSJsF0gplP7lx" target="_blank">Get Started Today</a>
-  </div>
   <h2>Proof</h2>
-  <p>Trusted by businesses worldwide — testimonials, portfolio images, and video demos available.</p>
+  <div class="portfolio-grid">
+    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Finance CEO — 3D Card</div></div>
+    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Apparel — Virtual Store</div></div>
+    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Onboarding — Corporate World</div></div>
+    <div class="pf-card"><div class="pf-thumb"></div><div class="pf-caption">Video — ALYSSIUN Tour</div></div>
+  </div>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">© 2025 ALYSSIUN Universe</div>
+  <div class="wrap">© 2025 ALYSSIUN Universe — All rights reserved.</div>
 </footer>
 </body>
 </html>
