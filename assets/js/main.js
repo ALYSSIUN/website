@@ -10,7 +10,7 @@ if (toggle && nav){
   });
 }
 
-// Dropdown toggle for Explore (works on mobile and desktop click)
+// Dropdown toggle for Explore (mobile + click)
 document.querySelectorAll('[data-has-sub]').forEach(group => {
   const btn = group.querySelector('.submenu-toggle');
   const sub = group.querySelector('.subnav');
