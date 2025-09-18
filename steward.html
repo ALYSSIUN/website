@@ -21,7 +21,7 @@
     .cta:active{transform:translateY(1px)}
     .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
     @media (max-width:820px){.grid{grid-template-columns:1fr}.hide-sm{display:none}}
-    .card{background:linear-gradient(180deg,#0f1624,#0e1521);border:1px solid #1e2a3b;border-radius:16px;padding:20px 20px 50px 20px}
+    .card{background:linear-gradient(180deg,#0f1624,#0e1521);border:1px solid #1e2a3b;border-radius:16px;padding:10px;margin:10px}
     h1{font-size:32px;line-height:1.2;margin:6px 0 10px}
     h2{font-size:18px;color:var(--muted);font-weight:600;margin:0}
     h3{font-size:16px;margin:14px 0 8px;color:#cfe3ff}
@@ -74,80 +74,101 @@
 
   <main class="wrap">
     <div class="grid">
-      <section class="card">
-        <div class="hero">
-          <div class="avatar">
-            <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/ambd8391-02.jpg" alt="Profile"/>
+      
+      <!-- Section -->
+      <section class="card section">
+        <div class="section">
+          <div class="hero">
+            <div class="avatar">
+              <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/ambd8391-02.jpg" alt="Profile"/>
+            </div>
+            <div>
+              <h2>Freelance Yacht Steward</h2>
+              <h1>Jonathan Lozano</h1>
+              <div class="ribbon">
+                <span class="badge">Bilingual: English • Español</span>
+                <span class="badge">Guest Service & Housekeeping</span>
+                <span class="badge">Table Service • Bartending Basics</span>
+                <span class="badge">Laundry • Detailing</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2>Freelance Yacht Steward</h2>
-            <h1>Jonathan Lozano</h1>
+          <div class="section">
+            <p class="muted">Friendly, detail‑driven interior crew member for luxury charters and daywork. Background in yacht interior/exterior cleaning and charter support. Professional, discreet, and focused on five‑star service.</p>
             <div class="ribbon">
-              <span class="badge">Bilingual: English • Español</span>
-              <span class="badge">Guest Service & Housekeeping</span>
-              <span class="badge">Table Service • Bartending Basics</span>
-              <span class="badge">Laundry • Detailing</span>
+              <span class="badge ok">Passport: USA</span>
+              <span class="badge ok">Valid to travel • Open to relocation</span>
             </div>
           </div>
         </div>
-
-        <div class="section">
-          <p class="muted">Friendly, detail‑driven interior crew member for luxury charters and daywork. Background in yacht interior/exterior cleaning and charter support. Professional, discreet, and focused on five‑star service.</p>
-          <div class="ribbon">
-            <span class="badge ok">Passport: USA</span>
-            <span class="badge ok">Valid to travel • Open to relocation</span>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3>Core Skills</h3>
-          <div>
-            <span class="tag">Guest greeting & VIP care</span>
-            <span class="tag">Table setup • Silver service basics</span>
-            <span class="tag">Cocktails • Coffee • Wine service</span>
-            <span class="tag">Cabin & heads detailing</span>
-            <span class="tag">Laundry • Steaming • Pressing</span>
-            <span class="tag">Floral & table decor</span>
-            <span class="tag">Inventory & provisioning</span>
-            <span class="tag">Discreet, positive attitude</span>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3>Experience</h3>
-          <div class="kv">
-            <div>2024–2025</div>
-            <div><strong>Yacht Daywork & Charters — Interior/Exterior</strong> (USA)
-              <ul>
-                <li>Interior housekeeping: cabins, bathrooms, saloon; guest‑ready turnarounds.</li>
-                <li>Service support during charters: table service, drinks, setup/clear‑down.</li>
-                <li>Exterior washdowns, stainless polishing, lines & fenders assistance.</li>
-              </ul>
-            </div>
-            <div>Before yachting</div>
-            <div><strong>Hospitality & Client Service (various)</strong>
-              <ul>
-                <li>Customer‑facing roles requiring clean presentation and fast, friendly service.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3>Rates & Availability</h3>
-          <div class="rate"><span>Day Charters</span><span class="muted">$250–$300/day + charter tips</span></div>
-          <div class="sp"></div>
-          <p class="muted">Currently open for last‑minute calls in <strong>Miami</strong> and willing to travel for Mediterranean/Caribbean seasons.</p>
-        </div>
-
-        <div class="section">
-          <h3>References</h3>
-          <p class="muted">Captain and client references available on request.</p>
-        </div>
-
       </section>
 
-      <aside class="card" id="contact">
+      <!-- Section -->
+      <section class="card section">
+        <h3>About Me</h3>
+        <p class="muted">
+          I started working in hospitality before moving into yachting, where I discovered my passion 
+          for creating five-star guest experiences. I take pride in attention to detail, from table 
+          service and cabin care to making sure every guest feels comfortable and valued. 
+        </p>
+        <p class="muted">
+          Outside of work, I enjoy travel, fitness, and the ocean lifestyle — always seeking new 
+          opportunities to grow and contribute on board. This job is a way for me to do honest work, 
+          meet people, and support myself while helping clients enjoy their charters to the fullest.
+        </p>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Experience</h3>
+        <div class="kv">
+          <div>2024–2025</div>
+          <div><strong>Yacht Daywork & Charters — Interior/Exterior</strong> (USA)
+            <ul>
+              <li>Interior housekeeping: cabins, bathrooms, saloon; guest‑ready turnarounds.</li>
+              <li>Service support during charters: table service, drinks, setup/clear‑down.</li>
+              <li>Exterior washdowns, stainless polishing, lines & fenders assistance.</li>
+            </ul>
+          </div>
+          <div>Before yachting</div>
+          <div><strong>Hospitality & Client Service (various)</strong>
+            <ul>
+              <li>Customer‑facing roles requiring clean presentation and fast, friendly service.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Core Skills</h3>
+        <div>
+          <span class="tag">Guest greeting & VIP care</span>
+          <span class="tag">Table setup • Silver service basics</span>
+          <span class="tag">Cocktails • Coffee • Wine service</span>
+          <span class="tag">Cabin & heads detailing</span>
+          <span class="tag">Laundry • Steaming • Pressing</span>
+          <span class="tag">Floral & table decor</span>
+          <span class="tag">Inventory & provisioning</span>
+          <span class="tag">Discreet, positive attitude</span>
+        </div>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Rates & Availability</h3>
+        <div class="rate"><span>Day Charters</span><span class="muted">$250–$300/day + charter tips</span></div>
+        <p class="muted">Currently open for last‑minute calls in <strong>Miami</strong> and willing to travel for Mediterranean/Caribbean seasons.</p>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>References</h3>
+        <p class="muted">Captain and client references available on request.</p>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
         <h3>Contact</h3>
         <div class="kv">
           <div>Name</div><div>Jonathan Lozano</div>
@@ -157,21 +178,53 @@
           <div>Citizenship</div><div>USA</div>
           <div>Languages</div><div>English (fluent), Spanish (native)</div>
         </div>
+      </section>
 
-        <div class="section">
-          <h3>Quick Links</h3>
-          <div class="foot">
-            <a class="btn" href="assets/jonathanlozano.vcf" download>Save Contact</a>
-            <a class="cta" href="https://wa.me/19174031764" target="_blank" rel="noopener">WhatsApp Me</a>
-            <a class="btn" href="mailto:jonathandlozano@gmail.com">Email Me</a>
-            <button class="btn" onclick="window.print()">Download PDF</button>
-          </div>
+      <!-- Section -->
+      <section class="card section">
+        <h3>Notes</h3>
+        <p class="muted">Available for daywork and charters. Non‑smoker. Comfortable with long hours and guest‑facing roles.</p>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Gallery</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px;">
+          <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/steward-01.jpg" alt="Work photo 1" style="width:100%;border-radius:10px;">
+          <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/steward-02.jpg" alt="Work photo 2" style="width:100%;border-radius:10px;">
+          <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/steward-03.jpg" alt="Work photo 3" style="width:100%;border-radius:10px;">
         </div>
-        <div class="section">
-          <h3>Notes</h3>
-          <p class="muted">Available for daywork and charters. Non‑smoker. Comfortable with long hours and guest‑facing roles.</p>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Video</h3>
+        <video controls style="width:100%;border-radius:12px;">
+          <source src="assets/steward-01.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <!-- Section -->
+      <section class="card section">
+        <h3>Quick Links</h3>
+        <div class="foot">
+          <a class="btn" href="assets/jonathanlozano.vcf" download>Save Contact</a>
+          <a class="cta" href="https://wa.me/19174031764" target="_blank" rel="noopener">WhatsApp Me</a>
+          <a class="btn" href="mailto:jonathandlozano@gmail.com">Email Me</a>
+          <button class="btn" onclick="window.print()">Download PDF</button>
         </div>
-      </aside>
+      </section>
+
+      <!-- QR Code Section -->
+      <section class="card section" style="text-align:center;">
+        <h3>Scan My QR</h3>
+        <p class="muted">Quick access to this page on your phone:</p>
+        <img src="https://raw.githubusercontent.com/ALYSSIUN/website/refs/heads/main/assets/steward-qr.png" 
+            alt="QR Code linking to steward page" 
+            style="max-width:220px;width:100%;margin-top:12px;border-radius:12px;border:1px solid #22324a;">
+      </section>
+
     </div>
   </main>
 
