@@ -4,63 +4,246 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI-Powered Industrial Metaverse | ALYSSIUN</title>
+  <meta name="description" content="Cut costs, train smarter, and operate faster with ALYSSIUN: AI-powered digital twins, VR/AR training, and real-time simulations for industry." />
+  <link rel="icon" type="image/png" href="assets/favicon-alyssiun.png" />
   <style>
-    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#0b0f14; color:#f0f0f0;}
-    header, section {padding:60px 20px; text-align:center;}
-    header {background:linear-gradient(135deg,#111826,#0b0f14);}
-    h1 {font-size:2.5em; color:#4dd3ff;}
-    h2 {margin-top:20px; color:#36d399;}
-    p {max-width:800px; margin:10px auto; line-height:1.6;}
-    .cta {margin:30px 0;}
-    .cta a {background:#4dd3ff; color:#000; padding:12px 24px; border-radius:6px; margin:5px; text-decoration:none; font-weight:bold;}
-    .card {background:#111826; border-radius:12px; padding:20px; margin:20px auto; max-width:800px;}
-    .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;}
+    :root{
+      --bg:#0b0f14; --bg2:#0e141f; --card:#111826; --ink:#e8eef7; --muted:#a6b3c7;
+      --acc:#4dd3ff; --ok:#36d399; --warn:#fbbf24; --danger:#ef4444; --shadow:rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--acc);text-decoration:none}
+    .container{width:min(1200px,92%);margin:0 auto}
+    .btn{display:inline-block;padding:12px 20px;border-radius:12px;background:var(--acc);color:#001018;font-weight:700;box-shadow:0 8px 24px var(--shadow)}
+    .btn.alt{background:transparent;color:var(--ink);border:1px solid #243042}
+    .btn.sm{padding:10px 14px;border-radius:10px}
+    .pill{display:inline-block;padding:6px 12px;border:1px solid #243042;border-radius:999px;color:var(--muted);font-size:.9rem;background:#0f1520}
+    .grid{display:grid;gap:20px}
+    .row-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .row-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    header.hero{
+      position:relative;overflow:hidden;background:#0a0f15;
+      background-image:url('assets/hero-bg.jpg');background-size:cover;background-position:center;
+      border-bottom:1px solid #152033
+    }
+    header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,15,20,.65),rgba(11,15,20,.9))}
+    header .wrap{position:relative;z-index:2;padding:88px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:36px}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+    .hero-copy{margin-top:40px;text-align:center}
+    .hero-copy h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px;color:var(--acc)}
+    .hero-copy p{color:var(--muted);font-size:clamp(16px,2.2vw,18px);margin:6px auto 20px;max-width:840px}
+    .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+    section{padding:56px 0;border-top:1px solid #121a28}
+    h2{font-size:clamp(22px,3vw,28px);margin:0 0 8px;color:var(--ok)}
+    .sub{color:var(--muted);margin:0 0 24px}
+    .card{background:var(--card);border:1px solid #1a2436;border-radius:16px;padding:18px;box-shadow:0 10px 30px var(--shadow)}
+    .card img.thumb{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:1px solid #1a2436}
+    .li{display:flex;gap:12px;align-items:flex-start}
+    .li img{width:28px;height:28px}
+    .price{font-size:1.6rem;color:#d2ffe9}
+    .strike{color:#94a3b8;text-decoration:line-through;margin-left:8px;font-size:1rem}
+    .kaption{font-size:.9rem;color:var(--muted)}
+    .faq dt{font-weight:700;margin:14px 0 6px}
+    .faq dd{margin:0 0 10px;color:var(--muted)}
+    footer{padding:20px 0;border-top:1px solid #152033;text-align:center;background:#0a0f15;color:#9fb0c7}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .video{position:relative;border-radius:16px;overflow:hidden;border:1px solid #1a2436}
+    .video img{display:block;width:100%;height:auto}
+    .video .play{position:absolute;inset:auto auto 16px 16px}
+    .row-cards .card{display:flex;gap:16px;align-items:center}
+    .row-cards .card img{width:64px;height:64px;border-radius:12px;border:1px solid #1a2436}
+    .note{font-size:.9rem;color:#9fb0c7}
+    .tag{background:#0d1523;border:1px solid #1a2436;padding:6px 10px;border-radius:999px;color:#b9c6d5;font-size:.85rem}
+    .center{text-align:center}
+    .hide{display:none}
   </style>
-  <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
 
-<header>
-  <h1>AI-Powered Industrial Metaverse</h1>
-  <p>Transform how your company trains, operates, and innovates with ALYSSIUN.</p>
-  <div class="cta">
-    <a href="https://wa.me/19174031764" target="_blank">📲 Contact on WhatsApp</a>
-    <a href="mailto:jonathandlozano@gmail.com">✉️ Request a Demo</a>
-  </div>
-</header>
+  <!-- NAV + HERO -->
+  <header class="hero">
+    <div class="container wrap">
+      <nav>
+        <div class="brand">
+          <img src="assets/logo-alyssiun.svg" alt="ALYSSIUN logo" />
+          <span class="pill">AI-Powered Industrial Metaverse</span>
+        </div>
+        <div class="cta">
+          <a class="btn sm" href="https://wa.me/19174031764" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn sm alt" href="mailto:jonathandlozano@gmail.com">Email</a>
+        </div>
+      </nav>
 
-<section>
-  <h2>Why Industrial Metaverse?</h2>
-  <p>Reduce downtime, cut costs, and accelerate innovation with digital twins, VR/AR training, and AI-powered optimization. ALYSSIUN brings the industrial metaverse to life for your business.</p>
-</section>
+      <div class="hero-copy">
+        <h1>Cut Costs. Train Smarter. Operate Faster.</h1>
+        <p>ALYSSIUN builds <strong>digital twins</strong>, <strong>VR/AR training</strong>, and <strong>AI-driven simulations</strong> so your company can reduce downtime, improve safety, and accelerate decisions.</p>
+        <div class="cta">
+          <a class="btn" href="https://wa.me/19174031764" target="_blank" rel="noopener">Book a Free Demo</a>
+          <a class="btn alt" href="#demo">See a Live Simulation</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section>
-  <h2>Our Solutions</h2>
-  <div class="grid">
-    <div class="card"><h3>Digital Twins</h3><p>3D replicas of machines, factories, and fleets connected to real-time data.</p></div>
-    <div class="card"><h3>AI Optimization</h3><p>Predict failures, reduce downtime, and maximize efficiency with AI analytics.</p></div>
-    <div class="card"><h3>VR/AR Training</h3><p>Immersive workforce training that’s safer, faster, and smarter.</p></div>
-    <div class="card"><h3>Collaboration Hubs</h3><p>Secure, scalable metaverse spaces for remote teams and partners.</p></div>
-  </div>
-</section>
+  <!-- PAIN -->
+  <section>
+    <div class="container">
+      <h2>The Problem We Solve</h2>
+      <p class="sub">Downtime, unsafe or slow training, scattered data, and costly prototypes drain profits. Traditional methods can’t keep up with modern operations.</p>
+      <div class="grid row-3">
+        <div class="card li">
+          <img src="assets/icon-iot.png" alt="IoT icon">
+          <div><strong>Hidden inefficiencies</strong><br><span class="kaption">Bottlenecks stay invisible until something breaks.</span></div>
+        </div>
+        <div class="card li">
+          <img src="assets/icon-vr-training.png" alt="VR icon">
+          <div><strong>Training risk & cost</strong><br><span class="kaption">Hands-on training is expensive and can be unsafe.</span></div>
+        </div>
+        <div class="card li">
+          <img src="assets/icon-ai-analytics.png" alt="AI icon">
+          <div><strong>Slow decisions</strong><br><span class="kaption">Data lives in silos; leaders can’t see the full picture.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Packages</h2>
-  <div class="grid">
-    <div class="card"><h3>Starter</h3><p>$5K<br>Demo environment + 1 training module.</p></div>
-    <div class="card"><h3>Pro</h3><p>$25K<br>Factory digital twin + AI dashboard.</p></div>
-    <div class="card"><h3>Enterprise</h3><p>Custom Quote<br>Full platform with IoT + AI integration.</p></div>
-  </div>
-</section>
+  <!-- SOLUTION -->
+  <section>
+    <div class="container">
+      <h2>What You Get with ALYSSIUN</h2>
+      <p class="sub">A unified, interactive environment that mirrors your operations — with AI insights and VR/AR training built-in.</p>
+      <div class="grid row-3">
+        <div class="card">
+          <img class="thumb" src="assets/section-solutions.jpg" alt="Solutions overview">
+          <h3>Digital Twins</h3>
+          <p>Real-time 3D replicas of machines, factories, ships, or warehouses. See status, simulate changes, and plan with confidence.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/case-study-1.jpg" alt="AI analytics">
+          <h3>AI Analytics</h3>
+          <p>Predictive maintenance, throughput optimization, and scenario testing. Run “what-ifs” before you touch the real system.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/case-study-2.jpg" alt="VR training">
+          <h3>VR/AR Training</h3>
+          <p>Immersive training modules that boost retention and safety. Desktop/web modes available — headsets optional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Industries We Serve</h2>
-  <p>Manufacturing • Energy • Maritime • Construction • Logistics</p>
-</section>
+  <!-- PROOF -->
+  <section id="demo">
+    <div class="container">
+      <h2>See It in Action</h2>
+      <p class="sub">Short demos we’ll tailor to your workflow (Unity / Unreal, web or desktop).</p>
+      <div class="grid row-3">
+        <div class="card">
+          <div class="video">
+            <img src="assets/video-demo-thumb.jpg" alt="Simulation demo thumbnail">
+            <div class="play"><span class="pill">▶  Live Simulation</span></div>
+          </div>
+          <p class="kaption">Factory Line: layout tweaks, throughput simulation, and downtime prediction.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/case-study-3.jpg" alt="Logistics case study">
+          <p class="kaption">Logistics: route optimization & digital twin of a hub.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/section-benefits.jpg" alt="Benefits">
+          <p class="kaption">Training: safety scenarios & performance tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer style="text-align:center; padding:20px; background:#111826;">
-  <p>© 2025 ALYSSIUN. All Rights Reserved.</p>
-</footer>
+  <!-- PACKAGES -->
+  <section>
+    <div class="container">
+      <h2>Packages that Fit Your Scale</h2>
+      <p class="sub">Start simple, expand fast. Custom quotes available.</p>
+      <div class="grid row-3">
+        <div class="card">
+          <h3>Starter</h3>
+          <div class="price">$5K<span class="strike">$7,500</span></div>
+          <ul>
+            <li>Demo twin (single cell/machine)</li>
+            <li>1 VR/AR training module</li>
+            <li>Basic AI insights dashboard</li>
+            <li>Desktop or web delivery</li>
+          </ul>
+          <div class="cta"><a class="btn" href="https://wa.me/19174031764" target="_blank" rel="noopener">Book Demo</a></div>
+        </div>
+        <div class="card">
+          <h3>Pro</h3>
+          <div class="price">$25K</div>
+          <ul>
+            <li>Facility or vessel digital twin</li>
+            <li>Predictive maintenance models</li>
+            <li>Multi-user collaboration room</li>
+            <li>Up to 10 training modules</li>
+          </ul>
+          <div class="cta"><a class="btn" href="mailto:jonathandlozano@gmail.com">Request Quote</a></div>
+        </div>
+        <div class="card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <ul>
+            <li>Global ops control tower</li>
+            <li>IoT/ERP/PLM integrations</li>
+            <li>VR/AR at scale + SSO</li>
+            <li>24/7 support & SLA</li>
+          </ul>
+          <div class="cta"><a class="btn alt" href="https://wa.me/19174031764" target="_blank" rel="noopener">Talk to an Expert</a></div>
+        </div>
+      </div>
+      <p class="note">Delivery options: <span class="tag">WEB</span> (browser, no install) • <span class="tag">DOWNLOAD</span> (high-performance desktop)</p>
+    </div>
+  </section>
 
+  <!-- INDUSTRIES -->
+  <section>
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <div class="badges">
+        <span class="tag">Manufacturing</span>
+        <span class="tag">Energy</span>
+        <span class="tag">Maritime</span>
+        <span class="tag">Construction</span>
+        <span class="tag">Logistics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <h2>FAQ</h2>
+      <dl class="faq">
+        <dt>Do we need VR headsets?</dt>
+        <dd>No. Everything runs on desktop/web. Headsets add immersion but are optional.</dd>
+
+        <dt>How long does setup take?</dt>
+        <dd>Typical pilots 2–6 weeks depending on scope and data access.</dd>
+
+        <dt>Which engines do you use?</dt>
+        <dd>Unity, Unreal (ALYSSIUN HD), and WebGL/Three.js (ALYSSIUN LITE) — matched to performance needs.</dd>
+
+        <dt>Can you integrate our data?</dt>
+        <dd>Yes — IoT streams, PLCs, CAD/BIM, and enterprise systems (ERP/PLM). We’ll define a secure pipeline.</dd>
+      </dl>
+      <div class="center cta" style="margin-top:16px">
+        <a class="btn" href="https://wa.me/19174031764" target="_blank" rel="noopener">Schedule a Call</a>
+        <a class="btn alt" href="mailto:jonathandlozano@gmail.com">Email Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 ALYSSIUN. All Rights Reserved.</div>
+  </footer>
 </body>
 </html>
