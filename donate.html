@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALYSSIUN — Donate</title>
+  <meta name="description" content="Support ALYSSIUN’s mission to make the virtual world accessible to everyone." />
+  <link rel="icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="ALYSSIUN — Donate" />
+  <meta property="og:description" content="Fuel challenges, philanthropy, and extraordinary feats across the ALYSSIUN Universe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-donate.jpg" />
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{--bg:#0b0f14;--bg2:#0e141f;--card:#111826;--ink:#e8eef7;--muted:#a6b3c7;--acc:#4dd3ff;--ok:#36d399;--warn:#fbbf24;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font:500 16px/1.5 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:960px;margin:0 auto;padding:40px 20px}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .logo{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#000;font-weight:900}
+    h1{margin:0;font-size:1.6rem;letter-spacing:.4px}
+    .sub{color:var(--muted);margin:6px 0 28px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:linear-gradient(180deg,var(--card),#0d1422);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center;transition:transform .2s ease,border-color .2s ease}
+    .card:hover{transform:translateY(-2px);border-color:rgba(77,211,255,.35);box-shadow:0 14px 40px rgba(20,180,255,.16)}
+    .ico{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);flex:0 0 auto;font-weight:900}
+    .txt{display:flex;flex-direction:column;gap:4px}
+    .title{font-weight:800}
+    .hint{color:var(--muted);font-size:.92rem}
+    .cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:#0f1625;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .section{margin-top:36px}
+    .section h2{margin:0 0 12px;font-size:1.15rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    footer{margin:40px 0 10px;color:var(--muted);font-size:.9rem;text-align:center}
+    .qr{width:128px;height:128px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#fff;display:block}
+    .stack{display:flex;gap:14px;align-items:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">A</div>
+      <div>
+        <h1>Support ALYSSIUN</h1>
+        <div class="sub">Help us connect the world with visual, challenge-driven Metaverse experiences.</div>
+      </div>
+    </header>
+
+    <!-- Primary ways to donate -->
+    <div class="grid" aria-label="Donation methods">
+      <!-- Stripe -->
+      <a class="card" href="https://checkout.stripe.com/pay/REPLACE_WITH_CHECKOUT_LINK" target="_blank" rel="noopener" aria-label="Donate via Stripe">
+        <div class="ico">💳</div>
+        <div class="txt">
+          <div class="title">Credit/Debit (Stripe)</div>
+          <div class="hint">Fast, secure. One-time or monthly.</div>
+        </div>
+      </a>
+
+      <!-- PayPal -->
+      <a class="card" href="https://www.paypal.me/REPLACE_USERNAME" target="_blank" rel="noopener" aria-label="Donate via PayPal">
+        <div class="ico">🅿️</div>
+        <div class="txt">
+          <div class="title">PayPal</div>
+          <div class="hint">Use PayPal balance or cards.</div>
+        </div>
+      </a>
+
+      <!-- Buy Me a Coffee -->
+      <a class="card" href="https://www.buymeacoffee.com/REPLACE" target="_blank" rel="noopener" aria-label="Donate via Buy Me a Coffee">
+        <div class="ico">☕</div>
+        <div class="txt">
+          <div class="title">Buy Me a Coffee</div>
+          <div class="hint">Small tips, big impact.</div>
+        </div>
+      </a>
+
+      <!-- Crypto (optional) -->
+      <a class="card" href="#crypto" onclick="document.getElementById('crypto').scrollIntoView({behavior:'smooth'});return false;" aria-label="Donate with crypto">
+        <div class="ico">₿</div>
+        <div class="txt">
+          <div class="title">Crypto</div>
+          <div class="hint">BTC • ETH • USDT (addresses below)</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- QR quick pay (optional images you provide) -->
+    <div class="section">
+      <h2>Quick Pay (QR)</h2>
+      <div class="stack">
+        <!-- Replace these with your real QR images -->
+        <img class="qr" src="/assets/qr-stripe.png" alt="Stripe QR" />
+        <img class="qr" src="/assets/qr-paypal.png" alt="PayPal QR" />
+        <img class="qr" src="/assets/qr-coffee.png" alt="Buy Me a Coffee QR" />
+      </div>
+      <div class="small" style="margin-top:8px">Replace the QR images in <code>/assets/</code> once your links are live.</div>
+    </div>
+
+    <!-- Crypto section -->
+    <div id="crypto" class="section" aria-label="Crypto addresses">
+      <h2>Crypto</h2>
+      <div class="grid">
+        <div class="card" style="display:block">
+          <div class="title">Bitcoin (BTC)</div>
+          <div class="small">Address:</div>
+          <code style="word-break:break-all">bc1REPLACEBTCADDRESS</code>
+        </div>
+        <div class="card" style="display:block">
+          <div class="title">Ethereum (ETH)</div>
+          <div class="small">Address:</div>
+          <code style="word-break:break-all">0xREPLACEETHADDRESS</code>
+        </div>
+        <div class="card" style="display:block">
+          <div class="title">USDT (TRC20 or ERC20)</div>
+          <div class="small">Address:</div>
+          <code style="word-break:break-all">REPLACEUSDTADDRESS</code>
+        </div>
+      </div>
+      <div class="small" style="margin-top:8px">Double-check networks before sending.</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" aria-label="Contact">
+      <h2>Questions or receipts?</h2>
+      <div class="grid">
+        <a class="card" href="mailto:jonathandlozano@gmail.com">
+          <div class="ico">✉️</div>
+          <div class="txt">
+            <div class="title">Email</div>
+            <div class="hint">jonathandlozano@gmail.com</div>
+          </div>
+        </a>
+        <a class="card" href="https://wa.me/19174031764" target="_blank" rel="noopener">
+          <div class="ico">📱</div>
+          <div class="txt">
+            <div class="title">WhatsApp (Direct)</div>
+            <div class="hint">+1 917 403 1764</div>
+          </div>
+        </a>
+      </div>
+      <div class="small" style="margin-top:10px">We’ll send a confirmation for every donation.</div>
+    </div>
+
+    <div class="cta" role="group" aria-label="Quick actions">
+      <a class="btn" href="/" rel="noopener">⟵ Back to ALYSSIUN</a>
+      <a class="btn" href="/social" rel="noopener">🌐 Social Links</a>
+    </div>
+
+    <footer>© <span id="y"></span> ALYSSIUN — All rights reserved.</footer>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ALYSSIUN",
+    "url":"https://alyssiun.com",
+    "potentialAction":{
+      "@type":"DonateAction",
+      "target":[
+        "https://alyssiun.com/donate",
+        "https://checkout.stripe.com/pay/REPLACE_WITH_CHECKOUT_LINK",
+        "https://www.paypal.me/REPLACE_USERNAME"
+      ],
+      "recipient":{
+        "@type":"Organization",
+        "name":"ALYSSIUN"
+      }
+    },
+    "sameAs":[
+      "https://www.youtube.com/@ALYSSIUN"
+    ]
+  }
+  </script>
+</body>
+</html>
