@@ -1,0 +1,28 @@
+{
+  "name": "ALYSSIUN VIRTUAL UNIVERSE",
+  "short_name": "ALYSSIUN",
+  "description": "You don\u2019t just enter ALYSSIUN \u2014 you become part of it.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060913",
+  "theme_color": "#0B0F24",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/icons/maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ]
+}

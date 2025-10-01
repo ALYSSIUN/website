@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALYSSIUN — Events</title>
+  <meta name="description" content="Upcoming ALYSSIUN events: launches, challenges, developer sessions, and community meetups." />
+  <link rel="icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="ALYSSIUN — Events" />
+  <meta property="og:description" content="Enter live challenges, meet the community, and join developer sessions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-events.jpg" />
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{
+      --bg:#0b0f14;--bg2:#0e141f;--card:#111826;--ink:#e8eef7;--muted:#a6b3c7;--acc:#4dd3ff;--ok:#36d399;--warn:#fbbf24;
+      --ring:0 0 0 2px rgba(77,211,255,.25);--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font:500 16px/1.5 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:40px 20px}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .logo{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#000;font-weight:900}
+    h1{margin:0;font-size:1.6rem;letter-spacing:.4px}
+    .sub{color:var(--muted);margin:6px 0 22px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.09);background:#0f1625;cursor:pointer}
+    .chip[aria-pressed="true"]{border-color:rgba(77,211,255,.55);box-shadow:var(--ring)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .card{
+      background:linear-gradient(180deg,var(--card),#0d1422);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column
+    }
+    .media{width:100%;aspect-ratio:16/9;background:#0f1625;object-fit:cover}
+    .body{padding:14px 14px 10px;display:flex;flex-direction:column;gap:8px}
+    .title{font-weight:800;font-size:1.02rem}
+    .meta{color:var(--muted);font-size:.92rem;display:flex;flex-direction:column;gap:4px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:.72rem;color:#000;background:var(--acc);border-radius:999px;padding:3px 8px;font-weight:800;letter-spacing:.2px}
+    .foot{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;
+      background:#0f1625;border:1px solid rgba(255,255,255,.12);cursor:pointer;text-align:center
+    }
+    .btn:hover{border-color:rgba(77,211,255,.45)}
+    .cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+    footer{margin:40px 0 10px;color:var(--muted);font-size:.9rem;text-align:center}
+    .section{margin-top:34px}
+    .section h2{margin:0 0 10px;font-size:1.15rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    .empty{opacity:.7;border:1px dashed rgba(255,255,255,.2);border-radius:16px;padding:16px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">A</div>
+      <div>
+        <h1>ALYSSIUN — Events</h1>
+        <div class="sub">Enter challenges. Meet creators. Access the ALYSSIUN Universe.</div>
+      </div>
+    </header>
+
+    <!-- Filters -->
+    <div class="toolbar" role="toolbar" aria-label="Filter events">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="online">Online</button>
+      <button class="chip" data-filter="in-person">In-Person</button>
+      <button class="chip" data-filter="lite">LITE (Web)</button>
+      <button class="chip" data-filter="hd">HD (Download)</button>
+      <button class="chip" data-filter="vr">VR</button>
+      <button class="chip" data-filter="challenge">Challenges</button>
+      <button class="chip" data-filter="dev">Developers</button>
+      <button class="chip" data-filter="biz">Business</button>
+    </div>
+
+    <!-- Upcoming -->
+    <div class="section" aria-label="Upcoming events">
+      <h2>Upcoming</h2>
+      <div id="upcoming" class="grid"></div>
+      <div id="upcoming-empty" class="empty" style="display:none">No upcoming events yet — check back soon.</div>
+    </div>
+
+    <!-- Past -->
+    <div class="section" aria-label="Past events">
+      <h2>Past</h2>
+      <div id="past" class="grid"></div>
+      <div id="past-empty" class="empty" style="display:none">Past events will appear here.</div>
+    </div>
+
+    <div class="cta" role="group" aria-label="Quick actions">
+      <a class="btn" href="/" rel="noopener">⟵ Back to ALYSSIUN</a>
+      <a class="btn" href="/social" rel="noopener">🌐 Social</a>
+      <a class="btn" href="/donate" rel="noopener">💠 Donate</a>
+      <a class="btn" href="https://wa.me/19174031764?text=Hi%20ALYSSIUN!%20I%27d%20like%20to%20host%20or%20sponsor%20an%20event." target="_blank" rel="noopener">📱 Host / Sponsor</a>
+    </div>
+
+    <footer>© <span id="y"></span> ALYSSIUN — All rights reserved.</footer>
+  </div>
+
+  <script>
+    // ====== CONFIG: Add/Update your events here ======
+    // dateStart/dateEnd in ISO 8601 (local time). Use empty string if unknown.
+    // mode: 'online' | 'in-person'
+    // kinds: any of ['lite','hd','vr','challenge','dev','biz']
+    const events = [
+      {
+        title: "Sector 1 Entry — Community Challenge",
+        cover: "/assets/events/sector1-challenge.jpg",
+        dateStart: "2025-10-05T18:00:00",
+        dateEnd: "2025-10-05T19:00:00",
+        tz: "America/New_York",
+        mode: "online",
+        kinds: ["lite","challenge"],
+        locationName: "ALYSSIUN LITE — Browser",
+        city: "",
+        locationUrl: "https://alyssiun.com",
+        onlineUrl: "https://alyssiun.com",
+        rsvpWhatsApp: "https://wa.me/19174031764?text=RSVP%20Sector%201%20Challenge%20-%20I%27m%20in!",
+        detailsUrl: "/worlds/sector-1",
+        notes: "Open access. No install. Screenshot challenge."
+      },
+      {
+        title: "Developers Roundtable — HD Templates",
+        cover: "/assets/events/dev-roundtable.jpg",
+        dateStart: "2025-10-12T15:00:00",
+        dateEnd: "2025-10-12T16:00:00",
+        tz: "America/New_York",
+        mode: "online",
+        kinds: ["hd","dev"],
+        locationName: "ALYSSIUN HD — Discord Stage",
+        city: "",
+        locationUrl: "https://discord.gg/REPLACE",
+        onlineUrl: "https://discord.gg/REPLACE",
+        rsvpWhatsApp: "https://wa.me/19174031764?text=RSVP%20Dev%20Roundtable",
+        detailsUrl: "/developers",
+        notes: "Revenue share 80/20, submissions & roadmap."
+      },
+      {
+        title: "IRL Meetup — Miami Creator Session",
+        cover: "/assets/events/miami-meet.jpg",
+        dateStart: "2025-11-02T17:30:00",
+        dateEnd: "2025-11-02T19:00:00",
+        tz: "America/New_York",
+        mode: "in-person",
+        kinds: ["biz","dev"],
+        locationName: "Wynwood — Café REPLACE",
+        city: "Miami, FL",
+        locationUrl: "https://maps.google.com/?q=Wynwood",
+        onlineUrl: "",
+        rsvpWhatsApp: "https://wa.me/19174031764?text=RSVP%20Miami%20IRL%20Meetup",
+        detailsUrl: "/events/miami",
+        notes: "Casual session. Bring laptops, demos, and questions."
+      }
+    ];
+
+    // ====== RENDERING LOGIC ======
+    const $upcoming = document.getElementById('upcoming');
+    const $past = document.getElementById('past');
+    const $upEmpty = document.getElementById('upcoming-empty');
+    const $pastEmpty = document.getElementById('past-empty');
+
+    function fmtDateRange(s, e, tz) {
+      try {
+        const start = new Date(s);
+        const end = e ? new Date(e) : null;
+        const optsDate = {year:'numeric', month:'short', day:'numeric', timeZone: tz || 'UTC'};
+        const optsTime = {hour:'numeric', minute:'2-digit', timeZone: tz || 'UTC'};
+        let out = new Intl.DateTimeFormat([], optsDate).format(start) + " • " +
+                  new Intl.DateTimeFormat([], optsTime).format(start);
+        if (end) out += "–" + new Intl.DateTimeFormat([], optsTime).format(end) + ` ${tz ? '' : ''}`;
+        return out + (tz ? ` ${tz.replace('_',' ')}` : '');
+      } catch { return ""; }
+    }
+
+    function googleCalUrl(ev){
+      // https://calendar.google.com/calendar/render?action=TEMPLATE&text=...&dates=YYYYMMDDTHHMMSSZ/YYYYMMDDTHHMMSSZ&details=...&location=...
+      const toICS = (d, tz) => {
+        const z = new Date(d);
+        // Convert to UTC and ICS-like YYYYMMDDTHHMMSSZ
+        const pad = n => String(n).padStart(2,'0');
+        return z.getUTCFullYear()+pad(z.getUTCMonth()+1)+pad(z.getUTCDate())+
+               'T'+pad(z.getUTCHours())+pad(z.getUTCMinutes())+pad(z.getUTCSeconds())+'Z';
+      };
+      const s = toICS(ev.dateStart, ev.tz);
+      const e = toICS(ev.dateEnd || ev.dateStart, ev.tz);
+      const params = new URLSearchParams({
+        action:'TEMPLATE',
+        text: ev.title,
+        dates: `${s}/${e}`,
+        details: (ev.notes || '') + (ev.detailsUrl ? `\nMore: ${location.origin}${ev.detailsUrl}` : ''),
+        location: ev.locationName + (ev.city? `, ${ev.city}`:'')
+      });
+      return `https://calendar.google.com/calendar/render?${params.toString()}`;
+    }
+
+    function icsFile(ev){
+      const dtstamp = new Date();
+      const pad = n => String(n).padStart(2,'0');
+      const fmtUTC = d => {
+        const z = new Date(d);
+        return z.getUTCFullYear()+pad(z.getUTCMonth()+1)+pad(z.getUTCDate())+
+               'T'+pad(z.getUTCHours())+pad(z.getUTCMinutes())+pad(z.getUTCSeconds())+'Z';
+      };
+      const uid = `${Date.now()}@alyssiun.com`;
+      const dtstart = fmtUTC(ev.dateStart);
+      const dtend = fmtUTC(ev.dateEnd || ev.dateStart);
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//ALYSSIUN//Events//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${fmtUTC(dtstamp)}`,
+        `DTSTART:${dtstart}`,
+        `DTEND:${dtend}`,
+        `SUMMARY:${ev.title}`,
+        `DESCRIPTION:${(ev.notes||'').replace(/\n/g,'\\n')}${ev.detailsUrl?`\\nMore: ${location.origin}${ev.detailsUrl}`:''}`,
+        `LOCATION:${ev.locationName}${ev.city?`, ${ev.city}`:''}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      const blob = new Blob([ics], {type:'text/calendar'});
+      return URL.createObjectURL(blob);
+    }
+
+    function chipActive(name){
+      [...document.querySelectorAll('.chip')].forEach(b=>{
+        b.setAttribute('aria-pressed', b.dataset.filter===name ? 'true' : 'false');
+      });
+    }
+
+    function render(filter='all'){
+      $upcoming.innerHTML=''; $past.innerHTML='';
+      const now = new Date();
+      let upCount=0, pastCount=0;
+
+      const matches = (ev)=>{
+        if (filter==='all') return true;
+        if (filter==='online' || filter==='in-person') return ev.mode===filter;
+        return (ev.kinds||[]).includes(filter);
+      };
+
+      events
+        .sort((a,b)=> new Date(a.dateStart) - new Date(b.dateStart))
+        .forEach(ev=>{
+          if (!matches(ev)) return;
+
+          const isPast = new Date(ev.dateEnd || ev.dateStart) < now;
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.setAttribute('itemscope','');
+          card.setAttribute('itemtype','https://schema.org/Event');
+
+          const img = document.createElement('img');
+          img.className='media';
+          img.src = ev.cover || '/assets/events/placeholder.jpg';
+          img.alt = ev.title;
+          card.appendChild(img);
+
+          const body = document.createElement('div');
+          body.className='body';
+          body.innerHTML = `
+            <div class="title" itemprop="name">${ev.title}</div>
+            <div class="meta">
+              <span itemprop="startDate" content="${ev.dateStart}">${fmtDateRange(ev.dateStart, ev.dateEnd, ev.tz)}</span>
+              <span>
+                ${ev.mode==='online'
+                  ? `Online • <a href="${ev.onlineUrl||'#'}" target="_blank" rel="noopener">Join link</a>`
+                  : `${ev.locationName}${ev.city?` — ${ev.city}`:''} • <a href="${ev.locationUrl||'#'}" target="_blank" rel="noopener">Maps</a>`}
+              </span>
+            </div>
+            <div class="tags">${
+              (ev.kinds||[]).map(k=>`<span class="tag">${k.toUpperCase()}</span>`).join(' ')
+            }</div>
+            <meta itemprop="location" content="${ev.mode==='online' ? 'Online' : (ev.locationName+(ev.city?`, ${ev.city}`:''))}">
+            ${ev.notes? `<div class="small">${ev.notes}</div>`:''}
+          `;
+          card.appendChild(body);
+
+          const foot = document.createElement('div');
+          foot.className='foot';
+          foot.innerHTML = `
+            <a class="btn" href="${ev.detailsUrl||'#'}">${ev.detailsUrl?'Details':'More soon'}</a>
+            <a class="btn" href="${ev.rsvpWhatsApp||'#'}" target="_blank" rel="noopener">RSVP WhatsApp</a>
+            <a class="btn" href="${googleCalUrl(ev)}" target="_blank" rel="noopener" style="grid-column:span 1">Add to Google</a>
+            <a class="btn ics-btn" href="#" style="grid-column:span 1">Download .ics</a>
+          `;
+          card.appendChild(foot);
+
+          // ICS click
+          foot.querySelector('.ics-btn').addEventListener('click', (e)=>{
+            e.preventDefault();
+            const url = icsFile(ev);
+            const a = document.createElement('a');
+            a.href = url; a.download = (ev.title.replace(/\s+/g,'_')||'event') + '.ics';
+            document.body.appendChild(a); a.click(); a.remove();
+            URL.revokeObjectURL(url);
+          });
+
+          if (isPast) { $past.appendChild(card); pastCount++; }
+          else { $upcoming.appendChild(card); upCount++; }
+        });
+
+      $upEmpty.style.display = upCount? 'none':'block';
+      $pastEmpty.style.display = pastCount? 'none':'block';
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.chip').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        chipActive(btn.dataset.filter);
+        render(btn.dataset.filter);
+      });
+    });
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Initial render
+    render();
+  </script>
+
+  <!-- JSON-LD: This gets regenerated inline by JS above. Keep a basic Organization node here. -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ALYSSIUN",
+    "url":"https://alyssiun.com",
+    "sameAs":[
+      "https://www.youtube.com/@ALYSSIUN"
+    ]
+  }
+  </script>
+</body>
+</html>
