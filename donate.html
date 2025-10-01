@@ -3,180 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALYSSIUN — Donate</title>
-  <meta name="description" content="Support ALYSSIUN’s mission to make the virtual world accessible to everyone." />
-  <link rel="icon" href="/assets/favicon.png" />
-  <meta property="og:title" content="ALYSSIUN — Donate" />
-  <meta property="og:description" content="Fuel challenges, philanthropy, and extraordinary feats across the ALYSSIUN Universe." />
+  <title>Donate — ALYSSIUN VIRTUAL UNIVERSE</title>
+  <meta name="description" content="Support ALYSSIUN VIRTUAL UNIVERSE. Your donation helps us build a metaverse social platform for everyone." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script defer src="/assets/js/main.js"></script>
+
+  <!-- Social -->
+  <meta property="og:title" content="Donate — ALYSSIUN VIRTUAL UNIVERSE" />
+  <meta property="og:description" content="You don’t just enter ALYSSIUN — you become part of it. Support the mission." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og-donate.jpg" />
-  <meta name="theme-color" content="#0b0f14" />
-  <style>
-    :root{--bg:#0b0f14;--bg2:#0e141f;--card:#111826;--ink:#e8eef7;--muted:#a6b3c7;--acc:#4dd3ff;--ok:#36d399;--warn:#fbbf24;--shadow:0 10px 30px rgba(0,0,0,.35)}
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font:500 16px/1.5 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:960px;margin:0 auto;padding:40px 20px}
-    header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-    .logo{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#000;font-weight:900}
-    h1{margin:0;font-size:1.6rem;letter-spacing:.4px}
-    .sub{color:var(--muted);margin:6px 0 28px}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
-    .card{background:linear-gradient(180deg,var(--card),#0d1422);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center;transition:transform .2s ease,border-color .2s ease}
-    .card:hover{transform:translateY(-2px);border-color:rgba(77,211,255,.35);box-shadow:0 14px 40px rgba(20,180,255,.16)}
-    .ico{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);flex:0 0 auto;font-weight:900}
-    .txt{display:flex;flex-direction:column;gap:4px}
-    .title{font-weight:800}
-    .hint{color:var(--muted);font-size:.92rem}
-    .cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:#0f1625;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
-    .section{margin-top:36px}
-    .section h2{margin:0 0 12px;font-size:1.15rem}
-    .small{font-size:.92rem;color:var(--muted)}
-    footer{margin:40px 0 10px;color:var(--muted);font-size:.9rem;text-align:center}
-    .qr{width:128px;height:128px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#fff;display:block}
-    .stack{display:flex;gap:14px;align-items:center}
-  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo" aria-hidden="true">A</div>
-      <div>
-        <h1>Support ALYSSIUN</h1>
-        <div class="sub">Help us connect the world with visual, challenge-driven Metaverse experiences.</div>
-      </div>
-    </header>
-
-    <!-- Primary ways to donate -->
-    <div class="grid" aria-label="Donation methods">
-      <!-- Stripe -->
-      <!--<a class="card" href="https://checkout.stripe.com/pay/REPLACE_WITH_CHECKOUT_LINK" target="_blank" rel="noopener" aria-label="Donate via Stripe">
-        <div class="ico">💳</div>
-        <div class="txt">
-          <div class="title">Credit/Debit (Stripe)</div>
-          <div class="hint">Fast, secure. One-time or monthly.</div>
-        </div>
-      </a>-->
-
-      <!-- PayPal -->
-      <a class="card" href="https://www.paypal.com/donate/?hosted_button_id=V92XH5TQLNFTJ" target="_blank" rel="noopener" aria-label="Donate via PayPal">
-        <div class="ico">🅿️</div>
-        <div class="txt">
-          <div class="title">PayPal</div>
-          <div class="hint">Use PayPal balance or cards.</div>
-        </div>
-      </a>
-
-      <!-- Buy Me a Coffee -->
-      <!--<a class="card" href="https://www.buymeacoffee.com/REPLACE" target="_blank" rel="noopener" aria-label="Donate via Buy Me a Coffee">
-        <div class="ico">☕</div>
-        <div class="txt">
-          <div class="title">Buy Me a Coffee</div>
-          <div class="hint">Small tips, big impact.</div>
-        </div>
-      </a>-->
-
-      <!-- Crypto (optional) -->
-      <!--<a class="card" href="#crypto" onclick="document.getElementById('crypto').scrollIntoView({behavior:'smooth'});return false;" aria-label="Donate with crypto">
-        <div class="ico">₿</div>
-        <div class="txt">
-          <div class="title">Crypto</div>
-          <div class="hint">BTC • ETH • USDT (addresses below)</div>
-        </div>
-      </a>-->
-    </div>
-
-    <!-- QR quick pay (optional images you provide) -->
-    <div class="section">
-      <h2>Quick Pay (QR)</h2>
-      <div class="stack">
-        <!-- Replace these with your real QR images -->
-        <img class="qr" src="/assets/qr-stripe.png" alt="Stripe QR" />
-        <img class="qr" src="/assets/qr-paypal.png" alt="PayPal QR" />
-        <img class="qr" src="/assets/qr-coffee.png" alt="Buy Me a Coffee QR" />
-      </div>
-      <div class="small" style="margin-top:8px">Replace the QR images in <code>/assets/</code> once your links are live.</div>
-    </div>
-
-    <!-- Crypto section -->
-    <!--<div id="crypto" class="section" aria-label="Crypto addresses">
-      <h2>Crypto</h2>
-      <div class="grid">
-        <div class="card" style="display:block">
-          <div class="title">Bitcoin (BTC)</div>
-          <div class="small">Address:</div>
-          <code style="word-break:break-all">bc1REPLACEBTCADDRESS</code>
-        </div>
-        <div class="card" style="display:block">
-          <div class="title">Ethereum (ETH)</div>
-          <div class="small">Address:</div>
-          <code style="word-break:break-all">0xREPLACEETHADDRESS</code>
-        </div>
-        <div class="card" style="display:block">
-          <div class="title">USDT (TRC20 or ERC20)</div>
-          <div class="small">Address:</div>
-          <code style="word-break:break-all">REPLACEUSDTADDRESS</code>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/">ALYSSIUN</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" data-nav role="navigation">
+      <a class="nav-link" href="/">Home</a>
+      <div class="dropdown" data-dropdown>
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+          Explore
+          <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="/explore/3d-websites/">3D Websites</a>
+          <a role="menuitem" href="/explore/join-sales-team/">Join Sales Team</a>
         </div>
       </div>
-      <div class="small" style="margin-top:8px">Double-check networks before sending.</div>
-    </div>-->
-
-    <!-- Contact -->
-    <div class="section" aria-label="Contact">
-      <h2>Questions or receipts?</h2>
-      <div class="grid">
-        <a class="card" href="mailto:jonathandlozano@gmail.com">
-          <div class="ico">✉️</div>
-          <div class="txt">
-            <div class="title">Email</div>
-            <div class="hint">jonathandlozano@gmail.com</div>
-          </div>
-        </a>
-        <a class="card" href="https://wa.me/19174031764" target="_blank" rel="noopener">
-          <div class="ico">📱</div>
-          <div class="txt">
-            <div class="title">WhatsApp (Direct)</div>
-            <div class="hint">+1 917 403 1764</div>
-          </div>
-        </a>
-      </div>
-      <div class="small" style="margin-top:10px">We’ll send a confirmation for every donation.</div>
-    </div>
-
-    <div class="cta" role="group" aria-label="Quick actions">
-      <a class="btn" href="/" rel="noopener">⟵ Back to ALYSSIUN</a>
-      <a class="btn" href="/social" rel="noopener">🌐 Social Links</a>
-    </div>
-
-    <footer>© <span id="y"></span> ALYSSIUN — All rights reserved.</footer>
+      <a class="nav-link" href="/download/">Download</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/contact/">Contact</a>
+      <a class="nav-link" href="/social/">Follow Us</a>
+      <a class="nav-link" href="/whatsapp/">WhatsApp</a>
+      <a class="nav-link active" href="/donate/">Donate</a>
+    </nav>
   </div>
+</header>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<main>
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Support the ALYSSIUN VIRTUAL UNIVERSE</h1>
+      <p class="lead">You don’t just enter ALYSSIUN — you become part of it.</p>
+      <p class="sublead">Create. Share. Earn. <strong>JOIN NOW — Together.</strong></p>
+    </div>
+  </section>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"ALYSSIUN",
-    "url":"https://alyssiun.com",
-    "potentialAction":{
-      "@type":"DonateAction",
-      "target":[
-        "https://alyssiun.com/donate",
-        "https://checkout.stripe.com/pay/REPLACE_WITH_CHECKOUT_LINK",
-        "https://www.paypal.me/REPLACE_USERNAME"
-      ],
-      "recipient":{
-        "@type":"Organization",
-        "name":"ALYSSIUN"
-      }
-    },
-    "sameAs":[
-      "https://www.youtube.com/@ALYSSIUN"
-    ]
-  }
-  </script>
+  <!-- Centered Donate Button -->
+  <section class="wrap center" style="padding:36px 0 16px;">
+    <div class="card" style="max-width:720px;margin:0 auto;padding:28px;">
+      <p style="margin:0 0 18px;">
+        Your donation helps us build accessible worlds, support creators, and scale servers and development.
+      </p>
+      <div style="display:flex;justify-content:center;">
+        <a class="btn primary" style="min-width:240px;font-size:1.05rem;"
+           href="https://www.paypal.com/donate/?hosted_button_id=V92XH5TQLNFTJ"
+           target="_blank" rel="noopener noreferrer" aria-label="Donate with PayPal">
+          Donate with PayPal
+        </a>
+      </div>
+      <p style="margin:16px 0 0; font-size:0.95rem; opacity:0.9;">
+        Secure payment via PayPal. Donations are voluntary and do not purchase features or deliverables.
+        If you donated by mistake, contact us via <a href="/contact/">Contact</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Your Donation Supports -->
+  <section class="wrap" style="padding:8px 0 44px;">
+    <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <article class="card" style="padding:18px;">
+        <h4 style="margin-top:0;">Creators & Community</h4>
+        <p>Funding challenges, philanthropy initiatives, and community events.</p>
+      </article>
+      <article class="card" style="padding:18px;">
+        <h4 style="margin-top:0;">Servers & Tools</h4>
+        <p>Keeping worlds online and improving our creator pipeline.</p>
+      </article>
+      <article class="card" style="padding:18px;">
+        <h4 style="margin-top:0;">Development</h4>
+        <p>Building features across LITE (web) and HD (desktop/VR).</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Secondary CTAs -->
+  <section class="wrap center" style="padding:0 0 44px;">
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn dark" href="/social/">Follow Our Journey</a>
+      <a class="btn dark" href="https://discord.com/invite/9WnrN9QCgJ" target="_blank" rel="noopener noreferrer">Join Discord</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">© 2025 ALYSSIUN Universe — All rights reserved.</div>
+</footer>
 </body>
 </html>
