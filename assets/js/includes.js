@@ -1,76 +1,61 @@
-<script>
+/* /assets/js/includes.js — robust loader for header, footer, and any partials */
+
+/* How it works:
+   - If data-include="header" or "footer", it loads from `${BASE}partials/header.html` or footer.html
+   - If data-include ends with .html (e.g. "/assets/partials/license.html"), it loads that exact path
+   - BASE comes from window.ALYSSIUN_BASE or defaults to "/assets/"
+*/
+
 (function () {
   const BASE = (window.ALYSSIUN_BASE || "/assets/").replace(/\/+$/, "") + "/";
 
-  // Fetch first working URL
-  async function fetchFirst(urls) {
-    for (const url of urls) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (res.ok) return await res.text();
-      } catch (_) {}
-    }
-    return null;
+  function resolveUrl(token) {
+    if (!token) return null;
+
+    // If the token looks like a file, use it as-is
+    if (/\.html?(\?.*)?$/i.test(token)) return token;
+
+    // Friendly aliases
+    if (token === "header") return `${BASE}partials/header.html`;
+    if (token === "footer") return `${BASE}partials/footer.html`;
+
+    // Fall back: treat token as relative under BASE
+    return `${BASE}${token.replace(/^\/+/, "")}`;
   }
 
-  // Replace the host element with fetched HTML
-  async function inject(host, urls) {
-    const html = await fetchFirst(urls);
-    if (!html) return;
-    host.outerHTML = html;
+  async function loadInto(el, url) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status + " " + res.statusText);
+      const html = await res.text();
+      // Use innerHTML so the element remains in place (avoids layout flashes)
+      el.innerHTML = html;
+      return true;
+    } catch (err) {
+      console.warn("Include failed:", url, err);
+      return false;
+    }
   }
 
-  // Build candidate URLs for a given include token
-  function candidateURLs(token) {
-    // special tokens for convenience
-    if (token === "header") {
-      return [
-        `${BASE}partials/header.html`,
-        "/assets/partials/header.html",
-        "/partials/header.html",
-        "./partials/header.html",
-      ];
-    }
-    if (token === "footer") {
-      return [
-        `${BASE}partials/footer.html`,
-        "/assets/partials/footer.html",
-        "/partials/footer.html",
-        "./partials/footer.html",
-      ];
-    }
+  async function processIncludes() {
+    const nodes = Array.from(document.querySelectorAll("[data-include]"));
 
-    // direct file paths (recommended: /assets/partials/xxxx.html)
-    // try exactly as given, then resolve under BASE
-    const t = token.replace(/^\/+/, ""); // drop leading slash for BASE join
-    return [token, `${BASE}${t}`];
-  }
-
-  // ---------- Auto include all placeholders ----------
-  document.addEventListener("DOMContentLoaded", async () => {
-    const placeholders = Array.from(document.querySelectorAll("[data-include]"));
-
-    // Inject in order so header exists before nav init
-    for (const host of placeholders) {
+    for (const host of nodes) {
       const token = host.getAttribute("data-include");
-      await inject(host, candidateURLs(token));
+      const url = resolveUrl(token);
+      if (!url) continue;
+      await loadInto(host, url);
     }
 
-    // After header/footer are in DOM, run layout/nav setup
+    // Recompute header offset after header is injected
     setHeaderOffset();
     initNav();
-
     window.addEventListener("resize", setHeaderOffset, { passive: true });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeAllDropdowns();
-        const nav = document.querySelector("[data-nav]");
-        if (nav?.classList.contains("open")) toggleMenu(false);
-      }
-    });
-  });
+  }
 
-  // ---------- Layout: fixed header offset ----------
+  document.addEventListener("DOMContentLoaded", processIncludes);
+
+  /* ---------- Layout: fixed header offset ---------- */
   function setHeaderOffset() {
     const h = document.querySelector(".site-header");
     if (!h) return;
@@ -79,13 +64,19 @@
     document.body.classList.add("has-fixed-header");
   }
 
-  // ---------- Navigation & dropdowns ----------
+  /* ---------- Navigation & dropdowns ---------- */
   function initNav() {
     const nav = document.querySelector("[data-nav]");
     const toggleBtn = document.querySelector(".nav-toggle");
     const closeBtn = nav?.querySelector(".nav-close");
-
     if (!nav || !toggleBtn) return;
+
+    function toggleMenu(open) {
+      nav.classList.toggle("open", open);
+      toggleBtn.setAttribute("aria-expanded", String(open));
+      document.documentElement.classList.toggle("body-lock", open);
+      if (!open) closeAllDropdowns();
+    }
 
     toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -99,7 +90,13 @@
       toggleMenu(false);
     });
 
-    // Dropdowns with stable hover/click
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (nav.classList.contains("open")) toggleMenu(false);
+        closeAllDropdowns();
+      }
+    });
+
     document.querySelectorAll("[data-dropdown]").forEach((dd) => {
       const btn = dd.querySelector(".dropbtn");
       const menu = dd.querySelector(".dropdown-content");
@@ -124,13 +121,6 @@
       if (e.target.closest("[data-dropdown]")) return;
       closeAllDropdowns();
     });
-
-    function toggleMenu(open) {
-      open ? nav.classList.add("open") : nav.classList.remove("open");
-      toggleBtn.setAttribute("aria-expanded", String(open));
-      document.documentElement.classList.toggle("body-lock", open);
-      if (!open) closeAllDropdowns();
-    }
   }
 
   function closeAllDropdowns() {
@@ -138,4 +128,3 @@
     document.querySelectorAll('.dropbtn[aria-expanded="true"]').forEach((b) => b.setAttribute("aria-expanded", "false"));
   }
 })();
-</script>
