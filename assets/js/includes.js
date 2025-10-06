@@ -104,3 +104,20 @@
     }
   }
 })();
+
+
+// /assets/js/includes.js
+document.addEventListener("DOMContentLoaded", async () => {
+  const includes = document.querySelectorAll("[data-include]");
+  for (const el of includes) {
+    const file = el.getAttribute("data-include");
+    try {
+      const res = await fetch(file, { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status);
+      el.innerHTML = await res.text();
+    } catch (err) {
+      console.warn("Include failed:", file, err);
+    }
+  }
+});
+
