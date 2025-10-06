@@ -1,32 +1,61 @@
+/* /assets/js/includes.js — robust loader for header, footer, and any partials */
+
+/* How it works:
+   - If data-include="header" or "footer", it loads from `${BASE}partials/header.html` or footer.html
+   - If data-include ends with .html (e.g. "/assets/partials/license.html"), it loads that exact path
+   - BASE comes from window.ALYSSIUN_BASE or defaults to "/assets/"
+*/
+
 (function () {
   const BASE = (window.ALYSSIUN_BASE || "/assets/").replace(/\/+$/, "") + "/";
 
-  async function fetchFirst(urls) {
-    for (const url of urls) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (res.ok) return await res.text();
-      } catch (_) {}
+  function resolveUrl(token) {
+    if (!token) return null;
+
+    // If the token looks like a file, use it as-is
+    if (/\.html?(\?.*)?$/i.test(token)) return token;
+
+    // Friendly aliases
+    if (token === "header") return `${BASE}partials/header.html`;
+    if (token === "footer") return `${BASE}partials/footer.html`;
+
+    // Fall back: treat token as relative under BASE
+    return `${BASE}${token.replace(/^\/+/, "")}`;
+  }
+
+  async function loadInto(el, url) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status + " " + res.statusText);
+      const html = await res.text();
+      // Use innerHTML so the element remains in place (avoids layout flashes)
+      el.innerHTML = html;
+      return true;
+    } catch (err) {
+      console.warn("Include failed:", url, err);
+      return false;
     }
-    return null;
-  }
-  async function inject(selector, urls) {
-    const host = document.querySelector(selector);
-    if (!host) return;
-    const html = await fetchFirst(urls);
-    if (html) host.outerHTML = html;
   }
 
-  const headerURLs = [`${BASE}partials/header.html`, "/partials/header.html", "./partials/header.html"];
-  const footerURLs = [`${BASE}partials/footer.html`, "/partials/footer.html", "./partials/footer.html"];
+  async function processIncludes() {
+    const nodes = Array.from(document.querySelectorAll("[data-include]"));
 
-  Promise.resolve(inject('[data-include="header"]', headerURLs)).then(() => {
-    initNav();
+    for (const host of nodes) {
+      const token = host.getAttribute("data-include");
+      const url = resolveUrl(token);
+      if (!url) continue;
+      await loadInto(host, url);
+    }
+
+    // Recompute header offset after header is injected
     setHeaderOffset();
-    window.addEventListener("resize", setHeaderOffset);
-  });
-  inject('[data-include="footer"]', footerURLs);
+    initNav();
+    window.addEventListener("resize", setHeaderOffset, { passive: true });
+  }
 
+  document.addEventListener("DOMContentLoaded", processIncludes);
+
+  /* ---------- Layout: fixed header offset ---------- */
   function setHeaderOffset() {
     const h = document.querySelector(".site-header");
     if (!h) return;
@@ -35,43 +64,39 @@
     document.body.classList.add("has-fixed-header");
   }
 
+  /* ---------- Navigation & dropdowns ---------- */
   function initNav() {
     const nav = document.querySelector("[data-nav]");
-    const toggle = document.querySelector(".nav-toggle");
+    const toggleBtn = document.querySelector(".nav-toggle");
     const closeBtn = nav?.querySelector(".nav-close");
+    if (!nav || !toggleBtn) return;
 
-    const openMenu = () => {
-      nav?.classList.add("open");
-      toggle?.setAttribute("aria-expanded", "true");
-      document.documentElement.classList.add("body-lock");
-    };
-    const closeMenu = () => {
-      nav?.classList.remove("open");
-      toggle?.setAttribute("aria-expanded", "false");
-      document.documentElement.classList.remove("body-lock");
-      closeAllDropdowns();
-    };
+    function toggleMenu(open) {
+      nav.classList.toggle("open", open);
+      toggleBtn.setAttribute("aria-expanded", String(open));
+      document.documentElement.classList.toggle("body-lock", open);
+      if (!open) closeAllDropdowns();
+    }
 
-    toggle?.addEventListener("click", (e) => {
+    toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      nav?.classList.contains("open") ? closeMenu() : openMenu();
+      toggleMenu(!nav.classList.contains("open"));
     });
-    closeBtn?.addEventListener("click", closeMenu);
+    closeBtn?.addEventListener("click", () => toggleMenu(false));
 
     document.addEventListener("click", (e) => {
-      if (!nav?.classList.contains("open")) return;
-      if (nav.contains(e.target) || toggle?.contains(e.target)) return;
-      closeMenu();
+      if (!nav.classList.contains("open")) return;
+      if (nav.contains(e.target) || toggleBtn.contains(e.target)) return;
+      toggleMenu(false);
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        if (nav?.classList.contains("open")) closeMenu();
+        if (nav.classList.contains("open")) toggleMenu(false);
         closeAllDropdowns();
       }
     });
 
-    // Stable dropdown
     document.querySelectorAll("[data-dropdown]").forEach((dd) => {
       const btn = dd.querySelector(".dropbtn");
       const menu = dd.querySelector(".dropdown-content");
@@ -83,8 +108,7 @@
 
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (menu.classList.contains("show")) close();
-        else open();
+        menu.classList.contains("show") ? close() : open();
       });
 
       dd.addEventListener("mouseenter", open);
@@ -97,10 +121,10 @@
       if (e.target.closest("[data-dropdown]")) return;
       closeAllDropdowns();
     });
+  }
 
-    function closeAllDropdowns() {
-      document.querySelectorAll(".dropdown-content.show").forEach((m) => m.classList.remove("show"));
-      document.querySelectorAll('.dropbtn[aria-expanded="true"]').forEach((b) => b.setAttribute("aria-expanded", "false"));
-    }
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-content.show").forEach((m) => m.classList.remove("show"));
+    document.querySelectorAll('.dropbtn[aria-expanded="true"]').forEach((b) => b.setAttribute("aria-expanded", "false"));
   }
 })();
