@@ -66,120 +66,317 @@
 <body>
   <!-- Header -->
   <div data-include="header"></div>
-
+  
   <!-- Main -->
   <main>
-
-    <!-- Brand Hero -->
-    <section id="brand-hero" class="page-hero" style="text-align:center; padding:100px 0 60px; background:
-      radial-gradient(900px 360px at 10% 5%, rgba(64,202,255,.10), transparent 60%),
-      radial-gradient(700px 320px at 90% 5%, rgba(120,59,255,.10), transparent 60%),
-      linear-gradient(180deg,#0A0E22 0%, #060913 60%);">
-      <div class="wrap">
-        <h1>ALYSSIUN VIRTUAL UNIVERSE</h1>
-        <p class="lead">You don’t just enter ALYSSIUN — you become part of it.</p>
-        <p class="sublead">Create. Share. Earn. <strong>JOIN NOW — Together.</strong></p>
-      </div>
-    </section>
-
-    <!-- Vision & Mission -->
-    <section id="vision-mission" class="wrap" style="padding:28px 0;">
-      <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-        <article class="card" style="padding:18px;">
-          <h3 style="margin-top:0;">Our Vision</h3>
-          <p>Unite the world through a metaverse social platform where anyone can access, create, and earn.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h3 style="margin-top:0;">Our Mission</h3>
-          <p>Build the biggest metaverse social platform by empowering creators, businesses, and communities to thrive together.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h3 style="margin-top:0;">How We Tell Stories</h3>
-          <p>Focusing on challenges, philanthropy, and extraordinary feats — with visual storytelling first.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- What is ALYSSIUN -->
-    <section id="what-is" class="wrap" style="padding:8px 0 24px;">
-      <h2 class="center" style="margin-bottom:12px;">What is ALYSSIUN?</h2>
-      <p class="center" style="max-width:820px;margin:0 auto 18px;">
-        A unified universe of immersive worlds, apps, and creator-driven content. People come to ALYSSIUN to create and share — but stay for who they can be.
-      </p>
-      <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">ALYSSIUN WORLDS</h4>
-          <p>Immersive 3D spaces — from social hubs to simulations and virtual offices.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">ALYSSIUN APPS</h4>
-          <p>Cross-platform software to access, manage, and grow your universe.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">ALYSSIUN ASSETS</h4>
-          <p>A marketplace for 3D models, code, scenes, and tools to power your builds.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Access Formats -->
-    <section id="access" class="wrap" style="padding:8px 0 28px;">
-      <h2 class="center" style="margin-bottom:12px;">Access the Universe</h2>
-      <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">WEB</h4>
-          <p>Cross-platform. Easy launch in your Chrome browser. No download or installation required.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">DOWNLOAD</h4>
-          <p>High-performance, more powerful experience. Download and installation required.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- For Developers -->
-    <section id="developers" class="wrap" style="padding:8px 0 28px;">
-      <div class="card" style="padding:22px;max-width:980px;margin:0 auto;">
-        <h2 style="margin-top:0;">Your Game, Your World — For Developers</h2>
-        <p>Publish on ALYSSIUN and keep <strong>80% revenue</strong>. Submit browser-ready builds or high-fidelity desktop/VR experiences. If it runs well and fits our vision, we’ll help you enter the universe.</p>
-        <ul style="padding-left:18px;margin:10px 0 0;">
-          <li>ALYSSIUN LITE — Web/browser-friendly experiences</li>
-          <li>ALYSSIUN HD — Downloadable desktop/VR builds</li>
-          <li>Simple publishing • Creator-first economics • Growing marketplace</li>
-        </ul>
-        <div style="margin-top:14px;">
-          <a class="btn primary" href="/contact/" aria-label="Get started as a developer">Become a Developer</a>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+    <!-- ABOUT — ALYSSIUN VIRTUAL UNIVERSE (paste inside <main>) -->
+    <section class="about-wrap">
+      <style>
+        /* ===== Scoped styles (only affect this block) ===== */
+        .about-wrap{
+          --bg:#0A0E22; --bg2:#060913; --panel:#121836; --panel2:#0F1431; --ink:#E8ECFF; --muted:#C8D0FF; --brand:#7AA2FF; --accent:#40CAFF;
+        }
+        .a-container{max-width:1200px;margin:0 auto;padding:0 20px;color:var(--ink);}
+        .a-hero{
+          text-align:center;padding:110px 0 80px;
+          background:
+            radial-gradient(1000px 400px at 10% 10%, rgba(64,202,255,0.12), transparent 60%),
+            radial-gradient(800px 360px at 90% 10%, rgba(120,59,255,0.12), transparent 60%),
+            linear-gradient(180deg,var(--bg) 0%, var(--bg2) 60%);
+        }
+        .a-h1{font-size:44px;line-height:1.1;margin:0 0 12px}
+        .a-h2{font-size:32px;line-height:1.2;margin:0}
+        .a-lead{color:var(--ink);opacity:.95}
+        .a-sub{color:var(--muted)}
+        .a-cta{display:inline-block;background:var(--brand);color:#0B0F24;font-weight:800;padding:14px 20px;border-radius:14px;text-decoration:none}
+        .a-cta.dark{background:#1C2450;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
+        .a-cta.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.22)}
+        .row-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+    
+        .section{padding:64px 0;background:var(--panel)}
+        .section.alt{background:var(--panel2)}
+        .section.bg{background:var(--bg)}
+        .center{text-align:center}
+    
+        .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:18px}
+        .card{background:#151B3E;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+        .card h3,.card h4{margin:0 0 6px}
+        .muted{color:var(--muted)}
+        .list{list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.8}
+    
+        .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:.9rem;color:var(--ink)}
+        .grid-2{display:grid;gap:18px;grid-template-columns:1fr}
+        @media (min-width: 900px){ .grid-2{grid-template-columns:1fr 1fr} }
+    
+        .table-wrap{overflow:auto;max-width:1100px;margin:18px auto 0}
+        .pillrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+      </style>
+    
+      <!-- HERO -->
+      <section class="a-hero">
+        <div class="a-container">
+          <h1 class="a-h1">ALYSSIUN VIRTUAL UNIVERSE</h1>
+          <p class="a-lead"><strong>Our vision</strong> is to unite the world through a metaverse social platform.</p>
+          <p class="a-lead"><strong>Our mission</strong> is to build the biggest metaverse social platform in the world.</p>
+          <p class="a-lead">People come to ALYSSIUN to create and share — but stay for who they can be.</p>
+          <h2 class="a-h2" style="margin:10px 0 0;">You don’t just enter ALYSSIUN — you become part of it.</h2>
+          <p style="margin:8px 0 16px;font-weight:700;">Create. Share. Earn.</p>
+          <div class="row-cta">
+            <a class="a-cta" href="/download">Download for Windows</a>
+            <a class="a-cta dark" href="#developers">For Developers</a>
+            <a class="a-cta ghost" href="#what-is">What is ALYSSIUN?</a>
+          </div>
+          <div class="pillrow">
+            <span class="pill">Free to Enter</span>
+            <span class="pill">Proximity Voice</span>
+            <span class="pill">Always-Open Spaces</span>
+          </div>
         </div>
-      </div>
+      </section>
+    
+      <!-- WHAT IS -->
+      <section id="what-is" class="section bg">
+        <div class="a-container center">
+          <h2 class="a-h2">What is ALYSSIUN?</h2>
+          <p class="a-sub" style="max-width:900px;margin:10px auto 0;">
+            ALYSSIUN is a unified virtual universe — a living network of <strong>worlds, apps, and assets</strong> built by creators and communities.
+          </p>
+          <div class="cards" style="margin-top:20px;">
+            <article class="card">
+              <h3>Access</h3>
+              <p class="muted">Walk into vast sectors and cities anytime. Natural conversations with proximity voice. No account required to start in LITE.</p>
+            </article>
+            <article class="card">
+              <h3>Create</h3>
+              <p class="muted">Build with any tools available online (Blender, web tools, etc.) or use <strong>ALYSSIUN Builder</strong> to craft spaces and content.</p>
+            </article>
+            <article class="card">
+              <h3>Earn</h3>
+              <p class="muted">Publish to the marketplace and keep <strong>80%</strong> of revenue from assets, apps, worlds, and mods.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- ENTER NOW — TWO WAYS -->
+      <section id="enter" class="section alt">
+        <div class="a-container">
+          <h2 class="a-h2 center">Enter Now — Two Ways (Both support VR)</h2>
+          <div class="grid-2" style="margin-top:18px;">
+            <article class="card">
+              <h3>ALYSSIUN LITE — From the Web (Free)</h3>
+              <ul class="list">
+                <li>Cross-platform: mobiles, computers, AR & VR</li>
+                <li>No install, no logins — just click and enter</li>
+                <li>Perfect for sharing links and onboarding fast</li>
+              </ul>
+              <div style="margin-top:12px;">
+                <a class="a-cta ghost" href="/download">Enter LITE</a>
+              </div>
+            </article>
+            <article class="card">
+              <h3>ALYSSIUN HD — For Windows (Free)</h3>
+              <ul class="list">
+                <li>Download for Windows and VR</li>
+                <li>Powered by <strong>Unreal Engine</strong></li>
+                <li>Ultra fidelity, bigger worlds, premium simulations</li>
+              </ul>
+              <div style="margin-top:12px;">
+                <a class="a-cta" href="/download">Get HD for Windows</a>
+              </div>
+            </article>
+          </div>
+          <p class="a-sub center" style="margin-top:14px;">
+            ALYSSIUN is <strong>free for everyone</strong> to enter and explore — sectors, cities, arenas, galleries, and simulations.
+          </p>
+        </div>
+      </section>
+    
+      <!-- THE FREE UNIVERSE -->
+      <section class="section bg">
+        <div class="a-container">
+          <h2 class="a-h2 center">The Free Universe</h2>
+          <p class="a-sub center" style="max-width:900px;margin:10px auto 0;">
+            Step into the entire metaverse simulation: <strong>huge sectors</strong> with cities, social hubs, arenas, galleries, offices, and training spaces — always evolving, always open.
+          </p>
+          <div class="cards" style="margin-top:20px;">
+            <article class="card"><h4>Always-Open</h4><p class="muted">Walk in anytime; your world is there when you are.</p></article>
+            <article class="card"><h4>Proximity Voice</h4><p class="muted">Conversations feel human — groups form naturally.</p></article>
+            <article class="card"><h4>Live Events</h4><p class="muted">Seasonal drops, challenges, and showcases.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FOR DEVELOPERS / CREATORS -->
+      <section id="developers" class="section alt">
+        <div class="a-container">
+          <h2 class="a-h2 center">Your Game, Your World — For Developers & Creators</h2>
+          <p class="a-sub center" style="max-width:900px;margin:10px auto 0;">
+            Use any creative tools on the internet — or the <strong>ALYSSIUN Builder</strong> — to craft assets, apps, worlds, and mods. Publish to the universe and <strong>keep 80%</strong>.
+          </p>
+          <div class="row-cta" style="margin-top:16px;">
+            <a class="a-cta" href="/contact" rel="noopener">Become a Creator</a>
+            <a class="a-cta ghost" href="/download">Download ALYSSIUN</a>
+          </div>
+        </div>
+      </section>
+    
+      <!-- MARKETPLACE -->
+      <section id="marketplace" class="section bg">
+        <div class="a-container">
+          <h2 class="a-h2 center">Marketplace</h2>
+          <p class="a-sub center" style="max-width:900px;margin:10px auto 0;">
+            The place to <strong>get for free</strong> or <strong>sell & buy</strong> — <strong>ASSETS</strong>, <strong>APPS</strong>, <strong>WORLDS</strong>, and <strong>MODS</strong>.
+          </p>
+          <div class="cards" style="margin-top:18px;">
+            <article class="card"><h3>ASSETS</h3><p class="muted">Models, scenes, textures, audio, VFX, blueprints.</p></article>
+            <article class="card"><h3>APPS</h3><p class="muted">Utilities, tools, extensions for creators and players.</p></article>
+            <article class="card"><h3>WORLDS</h3><p class="muted">Full environments — hubs, arenas, offices, simulations.</p></article>
+            <article class="card"><h3>MODS</h3><p class="muted">Gameplay, systems, add-ons to evolve experiences.</p></article>
+          </div>
+          <p class="a-sub center" style="margin-top:12px;">Creator-first economics: keep <strong>80%</strong> on sales.</p>
+        </div>
+      </section>
+    
+      <!-- WHITE LABEL -->
+      <section id="whitelabel" class="section alt">
+        <div class="a-container">
+          <h2 class="a-h2 center">White-Label: Use ALYSSIUN Technology Under Your Brand</h2>
+          <p class="a-sub center" style="max-width:900px;margin:10px auto 0;">
+            ALYSSIUN also offers White-Label for teams who want to launch their <strong>own</strong> named product — business spaces, games, metaverse hubs, or simulations — powered by ALYSSIUN.
+          </p>
+          <div class="cards" style="margin-top:18px;">
+            <article class="card"><h4>Your Brand</h4><p class="muted">Logo, name, colors, splash, and domain.</p></article>
+            <article class="card"><h4>Your Experience</h4><p class="muted">Proximity voice, multiplayer, hosting path.</p></article>
+            <article class="card"><h4>Simple Model</h4><p class="muted">Pay once for your app. <strong>Free Server</strong> included (up to 5). Upgrade only when you need more capacity.</p></article>
+            <article class="card"><h4>Deep Control</h4><p class="muted">Optional Full Source access available for advanced customization.</p></article>
+          </div>
+          <p class="a-sub center" style="margin-top:12px;">
+            ALYSSIUN remains <strong>free for everyone</strong> to enter and explore. White-Label is an optional, premium service.
+          </p>
+          <div class="row-cta" style="margin-top:16px;">
+            <a class="a-cta" href="/license">View License</a>
+            <a class="a-cta ghost" href="/servers">View Servers</a>
+          </div>
+        </div>
+      </section>
+    
+      <!-- PRINCIPLES -->
+      <section id="principles" class="section bg">
+        <div class="a-container">
+          <h2 class="a-h2 center">Principles</h2>
+          <div class="cards" style="margin-top:18px;">
+            <article class="card"><h4>Access for All</h4><p class="muted">From low-end to high-end devices, everyone can enter.</p></article>
+            <article class="card"><h4>Visual Storytelling</h4><p class="muted">Show, don’t tell — challenges, feats, and action first.</p></article>
+            <article class="card"><h4>Community-Driven</h4><p class="muted">Built with feedback loops, events, and collaboration.</p></article>
+            <article class="card"><h4>Freedom to Build</h4><p class="muted">Use any tools — or ALYSSIUN Builder — to create.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FEATURED WORLDS -->
+      <section id="worlds" class="section alt">
+        <div class="a-container">
+          <h2 class="a-h2 center">Featured Worlds</h2>
+          <p class="a-sub center" style="max-width:900px;margin:10px auto 0;">Curated experiences — from challenges to creative hubs. New worlds added monthly.</p>
+          <div class="cards" style="margin-top:18px;">
+            <article class="card">
+              <h3>Sector 1 — City Core</h3>
+              <p class="muted">Multiplayer • LITE • Social hub</p>
+              <a class="a-cta ghost" href="/download">Enter</a>
+            </article>
+            <article class="card">
+              <h3>Creator Arena</h3>
+              <p class="muted">Challenges • HD • PvE/PvP</p>
+              <a class="a-cta ghost" href="/download">Enter</a>
+            </article>
+            <article class="card">
+              <h3>Industrial Metaverse</h3>
+              <p class="muted">B2B • Simulation • VR</p>
+              <a class="a-cta ghost" href="/download">Enter</a>
+            </article>
+            <article class="card">
+              <h3>Showcase Gallery</h3>
+              <p class="muted">Community builds • LITE</p>
+              <a class="a-cta ghost" href="/download">Enter</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- SOCIAL STRIP -->
+      <section id="social" class="section bg">
+        <div class="a-container">
+          <h2 class="a-h2 center">Follow Us</h2>
+          <p class="a-sub center">Join the movement. Be part of the story.</p>
+          <div class="row-cta">
+            <a class="a-cta dark" href="/whatsapp">WhatsApp Groups</a>
+            <a class="a-cta ghost" href="/social">All Social Links</a>
+          </div>
+        </div>
+      </section>
+    
+      <!-- SUPPORT -->
+      <section id="donate" class="section alt">
+        <div class="a-container center">
+          <h2 class="a-h2">Support the Universe</h2>
+          <p class="a-sub">We’re building ALYSSIUN fast and transparently. Donations are optional and appreciated — never required.</p>
+          <a class="a-cta" href="/donate" target="_blank" rel="noopener">DONATE</a>
+        </div>
+      </section>
+    
+      <!-- FAQ -->
+      <section id="faq" class="section bg">
+        <div class="a-container">
+          <h2 class="a-h2 center">FAQ</h2>
+          <div class="cards" style="margin-top:16px;">
+            <article class="card">
+              <h3 style="margin:0 0 8px;">Do I need an account to try ALYSSIUN?</h3>
+              <p class="muted">No. You can enter LITE worlds in your browser without an account. Some HD/VR features may require sign-in later.</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0 0 8px;">What engines are supported?</h3>
+              <p class="muted">We don’t disclose our web stack. For HD, ALYSSIUN uses <strong>Unreal Engine</strong>.</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0 0 8px;">How do creators earn 80%?</h3>
+              <p class="muted">Publish assets, apps, worlds, or mods to the marketplace. Sales revenue is split 80/20 in favor of creators.</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0 0 8px;">Is VR supported?</h3>
+              <p class="muted">Yes — both LITE (Web) and HD (Windows) support VR entry paths.</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0 0 8px;">Is ALYSSIUN free?</h3>
+              <p class="muted">Yes. The universe is free to enter via LITE or HD. White-Label is an optional, paid service for branded products.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FINAL CTA -->
+      <section id="join" class="section alt">
+        <div class="a-container center">
+          <h2 class="a-h2">JOIN NOW — Together.</h2>
+          <p class="a-sub" style="font-weight:600">You don’t just enter ALYSSIUN — you become part of it. Create. Share. Earn.</p>
+          <div class="row-cta">
+            <a class="a-cta" href="/download">Get ALYSSIUN for Windows</a>
+            <a class="a-cta ghost" href="#developers">Publish as a Developer</a>
+            <a class="a-cta dark" href="#social">Follow the Journey</a>
+          </div>
+        </div>
+      </section>
     </section>
-
-    <!-- Principles -->
-    <section id="principles" class="wrap" style="padding:8px 0 28px;">
-      <h2 class="center" style="margin-bottom:12px;">Principles</h2>
-      <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">Access for All</h4>
-          <p>From low-end to high-end hardware — everyone can access the universe.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">Visual First</h4>
-          <p>Show, don’t tell. Stories are driven by visuals, challenges, and action.</p>
-        </article>
-        <article class="card" style="padding:18px;">
-          <h4 style="margin-top:0;">Community-Driven</h4>
-          <p>We build with our community — feedback loops, collaborations, and events.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="wrap center" style="padding:0 0 44px;">
-      <p class="lead" style="margin-bottom:10px;">Create. Share. Earn.</p>
-      <a class="btn primary" href="/download/">Enter the Universe</a>
-    </section>
-
+    <!-------------------------------------------------- Main ------------------------------------------------->
+        
+    <!-- Show the license pricing table -->
+    <div data-include="/assets/partials/license.html"></div>
+    
+    <!-- Show the server pricing table -->
+    <div data-include="/assets/partials/servers.html"></div>
+    
   </main>
-
 
   <!-- Footer -->
   <div data-include="footer"></div>
