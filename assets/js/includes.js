@@ -1,6 +1,8 @@
+<script>
 (function () {
   const BASE = (window.ALYSSIUN_BASE || "/assets/").replace(/\/+$/, "") + "/";
 
+  // Fetch first working URL
   async function fetchFirst(urls) {
     for (const url of urls) {
       try {
@@ -10,23 +12,65 @@
     }
     return null;
   }
-  async function inject(selector, urls) {
-    const host = document.querySelector(selector);
-    if (!host) return;
+
+  // Replace the host element with fetched HTML
+  async function inject(host, urls) {
     const html = await fetchFirst(urls);
-    if (html) host.outerHTML = html;
+    if (!html) return;
+    host.outerHTML = html;
   }
 
-  const headerURLs = [`${BASE}partials/header.html`, "/partials/header.html", "./partials/header.html"];
-  const footerURLs = [`${BASE}partials/footer.html`, "/partials/footer.html", "./partials/footer.html"];
+  // Build candidate URLs for a given include token
+  function candidateURLs(token) {
+    // special tokens for convenience
+    if (token === "header") {
+      return [
+        `${BASE}partials/header.html`,
+        "/assets/partials/header.html",
+        "/partials/header.html",
+        "./partials/header.html",
+      ];
+    }
+    if (token === "footer") {
+      return [
+        `${BASE}partials/footer.html`,
+        "/assets/partials/footer.html",
+        "/partials/footer.html",
+        "./partials/footer.html",
+      ];
+    }
 
-  Promise.resolve(inject('[data-include="header"]', headerURLs)).then(() => {
-    initNav();
+    // direct file paths (recommended: /assets/partials/xxxx.html)
+    // try exactly as given, then resolve under BASE
+    const t = token.replace(/^\/+/, ""); // drop leading slash for BASE join
+    return [token, `${BASE}${t}`];
+  }
+
+  // ---------- Auto include all placeholders ----------
+  document.addEventListener("DOMContentLoaded", async () => {
+    const placeholders = Array.from(document.querySelectorAll("[data-include]"));
+
+    // Inject in order so header exists before nav init
+    for (const host of placeholders) {
+      const token = host.getAttribute("data-include");
+      await inject(host, candidateURLs(token));
+    }
+
+    // After header/footer are in DOM, run layout/nav setup
     setHeaderOffset();
-    window.addEventListener("resize", setHeaderOffset);
-  });
-  inject('[data-include="footer"]', footerURLs);
+    initNav();
 
+    window.addEventListener("resize", setHeaderOffset, { passive: true });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        const nav = document.querySelector("[data-nav]");
+        if (nav?.classList.contains("open")) toggleMenu(false);
+      }
+    });
+  });
+
+  // ---------- Layout: fixed header offset ----------
   function setHeaderOffset() {
     const h = document.querySelector(".site-header");
     if (!h) return;
@@ -35,43 +79,27 @@
     document.body.classList.add("has-fixed-header");
   }
 
+  // ---------- Navigation & dropdowns ----------
   function initNav() {
     const nav = document.querySelector("[data-nav]");
-    const toggle = document.querySelector(".nav-toggle");
+    const toggleBtn = document.querySelector(".nav-toggle");
     const closeBtn = nav?.querySelector(".nav-close");
 
-    const openMenu = () => {
-      nav?.classList.add("open");
-      toggle?.setAttribute("aria-expanded", "true");
-      document.documentElement.classList.add("body-lock");
-    };
-    const closeMenu = () => {
-      nav?.classList.remove("open");
-      toggle?.setAttribute("aria-expanded", "false");
-      document.documentElement.classList.remove("body-lock");
-      closeAllDropdowns();
-    };
+    if (!nav || !toggleBtn) return;
 
-    toggle?.addEventListener("click", (e) => {
+    toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      nav?.classList.contains("open") ? closeMenu() : openMenu();
+      toggleMenu(!nav.classList.contains("open"));
     });
-    closeBtn?.addEventListener("click", closeMenu);
+    closeBtn?.addEventListener("click", () => toggleMenu(false));
 
     document.addEventListener("click", (e) => {
-      if (!nav?.classList.contains("open")) return;
-      if (nav.contains(e.target) || toggle?.contains(e.target)) return;
-      closeMenu();
+      if (!nav.classList.contains("open")) return;
+      if (nav.contains(e.target) || toggleBtn.contains(e.target)) return;
+      toggleMenu(false);
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        if (nav?.classList.contains("open")) closeMenu();
-        closeAllDropdowns();
-      }
-    });
-
-    // Stable dropdown
+    // Dropdowns with stable hover/click
     document.querySelectorAll("[data-dropdown]").forEach((dd) => {
       const btn = dd.querySelector(".dropbtn");
       const menu = dd.querySelector(".dropdown-content");
@@ -83,8 +111,7 @@
 
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (menu.classList.contains("show")) close();
-        else open();
+        menu.classList.contains("show") ? close() : open();
       });
 
       dd.addEventListener("mouseenter", open);
@@ -98,26 +125,17 @@
       closeAllDropdowns();
     });
 
-    function closeAllDropdowns() {
-      document.querySelectorAll(".dropdown-content.show").forEach((m) => m.classList.remove("show"));
-      document.querySelectorAll('.dropbtn[aria-expanded="true"]').forEach((b) => b.setAttribute("aria-expanded", "false"));
+    function toggleMenu(open) {
+      open ? nav.classList.add("open") : nav.classList.remove("open");
+      toggleBtn.setAttribute("aria-expanded", String(open));
+      document.documentElement.classList.toggle("body-lock", open);
+      if (!open) closeAllDropdowns();
     }
+  }
+
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-content.show").forEach((m) => m.classList.remove("show"));
+    document.querySelectorAll('.dropbtn[aria-expanded="true"]').forEach((b) => b.setAttribute("aria-expanded", "false"));
   }
 })();
-
-
-// /assets/js/includes.js
-document.addEventListener("DOMContentLoaded", async () => {
-  const includes = document.querySelectorAll("[data-include]");
-  for (const el of includes) {
-    const file = el.getAttribute("data-include");
-    try {
-      const res = await fetch(file, { cache: "no-store" });
-      if (!res.ok) throw new Error(res.status);
-      el.innerHTML = await res.text();
-    } catch (err) {
-      console.warn("Include failed:", file, err);
-    }
-  }
-});
-
+</script>
