@@ -66,23 +66,74 @@
 <body>
   <!-- Header -->
   <div data-include="header"></div>
-
+  
   <!-- Main -->
   <main>
-    <!-- Contact CTA -->
-    <section class="wrap center" style="padding:120px 0; text-align:center;">
-      <h1 style="margin-bottom:12px;">Contact ALYSSIUN</h1>
-      <p class="lead" style="margin:0 auto 24px; max-width:700px;">
-        You don’t just enter ALYSSIUN — you become part of it.<br>
-        Connect with us directly on WhatsApp.
-      </p>
-      <a class="btn primary" href="/whatsapp" aria-label="Go to WhatsApp groups">
-        Message Us on WhatsApp
-      </a>
-    </section>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+<!-- CONTACT — ALYSSIUN (compact) • paste inside <main> -->
+<section class="contact-min">
+  <style>
+    .contact-min{--bg:#0A0E22;--bg2:#060913;--panel:#121836;--ink:#E8ECFF;--muted:#C8D0FF;--brand:#7AA2FF;--ok:#25D366}
+    .c-box{max-width:980px;margin:0 auto;padding:96px 20px;color:var(--ink);text-align:center;
+      background:
+        radial-gradient(900px 360px at 10% 8%, rgba(64,202,255,.10), transparent 60%),
+        radial-gradient(700px 320px at 90% 8%, rgba(120,59,255,.10), transparent 60%),
+        linear-gradient(180deg,var(--bg) 0%, var(--bg2) 60%);
+    }
+    .c-h1{font-size:42px;margin:0 0 8px}
+    .c-lead{color:var(--ink);opacity:.95;max-width:720px;margin:0 auto 18px}
+    .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+    .btn{display:inline-block;padding:14px 20px;border-radius:14px;font-weight:800;text-decoration:none}
+    .btn.wa{background:var(--ok);color:#06250F}
+    .btn.primary{background:var(--brand);color:#0B0F24}
+    .btn.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.22)}
+    .grid{display:grid;gap:14px;grid-template-columns:1fr}
+    @media(min-width:820px){.grid{grid-template-columns:1fr 1fr 1fr}}
+    .card{background:#151B3E;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .muted{color:var(--muted);font-size:15px}
+  </style>
+
+  <!-- Hero -->
+  <div class="c-box">
+    <h1 class="c-h1">Contact ALYSSIUN</h1>
+    <p class="c-lead">You don’t just enter ALYSSIUN — you become part of it. Connect with our team and community.</p>
+    <div class="row">
+      <a class="btn wa" href="/whatsapp">Message Us on WhatsApp</a>
+      <a class="btn ghost" href="/social">All Social Links</a>
+    </div>
+    <p class="muted">Fast replies on WhatsApp • Global community • Transparent communication</p>
+  </div>
+
+  <!-- Quick options -->
+  <div style="max-width:980px;margin:0 auto;padding:36px 20px;">
+    <div class="grid">
+      <article class="card">
+        <h3>WhatsApp (Recommended)</h3>
+        <p class="muted">Support, questions, and event registration — all in one place.</p>
+        <div class="row"><a class="btn wa" href="/whatsapp">Open WhatsApp</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Business & Partnerships</h3>
+        <p class="muted">Collaborations, white-label inquiries, and enterprise plans.</p>
+        <div class="row">
+          <a class="btn primary" href="/license">View Licenses</a>
+          <a class="btn ghost" href="/servers">View Servers</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Community & Events</h3>
+        <p class="muted">Weekly networking — Tuesdays at <strong>7 PM ET</strong>. Register via WhatsApp.</p>
+        <div class="row"><a class="btn wa" href="/whatsapp">Join for Event Links</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+    <!-------------------------------------------------- Main ------------------------------------------------->
   </main>
 
-  
   <!-- Footer -->
   <div data-include="footer"></div>
 </body>
