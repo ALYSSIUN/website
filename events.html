@@ -70,12 +70,13 @@
   <!-- Main -->
   <main>
     <!-------------------------------------------------- Main ------------------------------------------------->
-<!-- EVENTS — ALYSSIUN (paste inside <main>) -->
+<!-- EVENTS — ALYSSIUN (WhatsApp Registration) • paste inside <main> -->
 <section class="events-wrap">
   <style>
     /* ===== Scoped styles (only affect this block) ===== */
     .events-wrap{
-      --bg:#0A0E22; --bg2:#060913; --panel:#121836; --panel2:#0F1431; --ink:#E8ECFF; --muted:#C8D0FF; --brand:#7AA2FF; --accent:#40CAFF;
+      --bg:#0A0E22; --bg2:#060913; --panel:#121836; --panel2:#0F1431;
+      --ink:#E8ECFF; --muted:#C8D0FF; --brand:#7AA2FF; --accent:#40CAFF; --ok:#25D366;
     }
     .e-container{max-width:1200px;margin:0 auto;padding:0 20px;color:var(--ink);}
     .e-hero{
@@ -90,8 +91,8 @@
     .e-lead{color:var(--ink);opacity:.95}
     .e-sub{color:var(--muted)}
     .e-cta{display:inline-block;background:var(--brand);color:#0B0F24;font-weight:800;padding:14px 20px;border-radius:14px;text-decoration:none}
-    .e-cta.dark{background:#1C2450;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
     .e-cta.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.22)}
+    .e-cta.wa{background:var(--ok);color:#06250F}
     .row-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
 
     .section{padding:64px 0;background:var(--panel)}
@@ -117,7 +118,7 @@
     .timebar .pill{background:transparent}
     .note{font-size:.94rem;color:var(--muted);margin-top:8px}
     .server-tag{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(122,162,255,.15);color:#E8ECFF;font-weight:700}
-    .agenda-list{list-style:none;padding:0;margin:10px 0 0;color:var(--muted);line-height:1.7}
+
     .faq details{background:#151B3E;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
     .faq summary{cursor:pointer;font-weight:700}
     .faq p{margin:10px 0 0}
@@ -128,7 +129,8 @@
     <div class="e-container">
       <h1 class="e-h1">ALYSSIUN Weekly Events</h1>
       <p class="e-lead"><strong>Meet. Connect. Grow.</strong></p>
-      <p class="e-sub">Every <strong>Tuesday</strong> • <strong>7:00–8:00 PM</strong> Miami Time (ET) • <strong>Free</strong> • LITE (Web) or HD (Windows/VR)</p>
+      <p class="e-sub">Every <strong>Tuesday</strong> • <strong>7:00–8:00 PM</strong> Miami Time (ET) • <strong>Free</strong></p>
+      <p class="e-sub" style="margin-top:6px;"><strong>Registration is required via WhatsApp.</strong> You’ll receive all event details and access links there.</p>
       <div class="pillrow">
         <span class="pill">Networking</span>
         <span class="pill">Proximity Voice</span>
@@ -136,8 +138,8 @@
         <span class="pill">VR Optional</span>
       </div>
       <div class="row-cta">
-        <a class="e-cta" href="#tracks">Choose Your Track</a>
-        <a class="e-cta ghost" href="#how">How to Join</a>
+        <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
+        <a class="e-cta ghost" href="#tracks">See Tracks</a>
       </div>
     </div>
   </section>
@@ -147,8 +149,8 @@
     <div class="e-container center">
       <h2 class="e-h2">Why We Meet</h2>
       <p class="e-sub" style="max-width:960px;margin:10px auto 0;">
-        The weekly hour to build real connections inside the ALYSSIUN Universe:
-        meet friends, expand business relationships, find collaborators, and grow together.
+        A weekly hour to build real connections inside the ALYSSIUN Universe: make friends, expand business relationships,
+        find collaborators, and grow together.
       </p>
       <div class="cards">
         <article class="card"><h4>Make Friends</h4><p class="muted">Natural conversations via proximity voice — no pressure.</p></article>
@@ -162,20 +164,19 @@
   <section id="tracks" class="section">
     <div class="e-container">
       <h2 class="e-h2 center">Tracks &amp; Servers (Pick One)</h2>
-      <p class="note center">All three run in parallel so each group gets a space designed for its purpose.</p>
+      <p class="note center">Select your track inside WhatsApp. We’ll send the correct access link for your server.</p>
       <div class="grid-3" style="margin-top:18px;">
         <!-- Business -->
         <article class="card">
           <div class="event-badge"><span class="dot"></span>For Business — Strategy &amp; Product</div>
           <p class="server-tag">Server: Business Space (Pro)</p>
-          <ul class="agenda-list">
+          <ul class="list" style="margin-top:8px;">
             <li>• Meet founders &amp; teams exploring white-label</li>
             <li>• Learn rollout playbooks &amp; best practices</li>
             <li>• Live Q&amp;A and partnership intros</li>
           </ul>
           <div class="row-cta" style="justify-content:flex-start;margin-top:12px;">
-            <a class="e-cta" href="/download">Enter via HD</a>
-            <a class="e-cta ghost" href="/download">Enter via LITE</a>
+            <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
           </div>
         </article>
 
@@ -183,14 +184,13 @@
         <article class="card">
           <div class="event-badge"><span class="dot"></span>For Gamers — Play, Build, Iterate</div>
           <p class="server-tag">Server: Gamers Arena (Max)</p>
-          <ul class="agenda-list">
+          <ul class="list" style="margin-top:8px;">
             <li>• Drop-in squads &amp; friendly challenges</li>
             <li>• Mod spotlights &amp; feedback circles</li>
             <li>• Find teammates and new friends</li>
           </ul>
           <div class="row-cta" style="justify-content:flex-start;margin-top:12px;">
-            <a class="e-cta" href="/download">Enter via HD</a>
-            <a class="e-cta ghost" href="/download">Enter via LITE</a>
+            <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
           </div>
         </article>
 
@@ -198,14 +198,13 @@
         <article class="card">
           <div class="event-badge"><span class="dot"></span>For Influencers — Create &amp; Collaborate</div>
           <p class="server-tag">Server: Creator Lounge (Pro)</p>
-          <ul class="agenda-list">
+          <ul class="list" style="margin-top:8px;">
             <li>• Content capture tips &amp; scene setups</li>
             <li>• Collaboration matching &amp; planning</li>
             <li>• Assets &amp; worlds for your next activation</li>
           </ul>
           <div class="row-cta" style="justify-content:flex-start;margin-top:12px;">
-            <a class="e-cta" href="/download">Enter via HD</a>
-            <a class="e-cta ghost" href="/download">Enter via LITE</a>
+            <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
           </div>
         </article>
       </div>
@@ -244,6 +243,9 @@
           </ul>
         </article>
       </div>
+      <div class="row-cta" style="margin-top:18px;">
+        <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
+      </div>
     </div>
   </section>
 
@@ -253,25 +255,22 @@
       <h2 class="e-h2 center">How to Join</h2>
       <div class="cards">
         <article class="card">
-          <h4>1) Pick Your Track</h4>
+          <h4>1) Join WhatsApp</h4>
+          <p class="muted">This is the official registration channel. We send your access links and reminders there.</p>
+          <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
+        </article>
+        <article class="card">
+          <h4>2) Pick Your Track</h4>
           <p class="muted">Business, Gamers, or Influencers. Each has a dedicated server and agenda.</p>
         </article>
         <article class="card">
-          <h4>2) Choose LITE or HD</h4>
+          <h4>3) Choose LITE or HD</h4>
           <p class="muted"><strong>LITE (Web):</strong> instant, no logins • <strong>HD (Windows/VR):</strong> maximum fidelity.</p>
         </article>
         <article class="card">
-          <h4>3) Use a Headset</h4>
-          <p class="muted">Proximity voice feels natural with headphones or earbuds.</p>
-        </article>
-        <article class="card">
           <h4>4) Walk In &amp; Talk</h4>
-          <p class="muted">Move closer to join a group; drift to explore new conversations.</p>
+          <p class="muted">Use a headset for proximity voice. Move closer to join a group; drift to explore new conversations.</p>
         </article>
-      </div>
-      <div class="row-cta" style="margin-top:16px;">
-        <a class="e-cta" href="#tracks">Choose Your Track</a>
-        <a class="e-cta ghost" href="/whatsapp">Get Event Reminders</a>
       </div>
     </div>
   </section>
@@ -286,6 +285,10 @@
           <p class="muted">Yes. ALYSSIUN events are free to join from LITE (Web) or HD (Windows/VR).</p>
         </details>
         <details>
+          <summary>How do I register?</summary>
+          <p class="muted">All registration happens in our WhatsApp group. We send the event details and access links there.</p>
+        </details>
+        <details>
           <summary>Do I need an account?</summary>
           <p class="muted">No accounts or logins are required for LITE. HD is a simple Windows download.</p>
         </details>
@@ -294,13 +297,12 @@
           <p class="muted">You can, but we recommend staying with one track to get the most value.</p>
         </details>
         <details>
-          <summary>Can I bring friends or my team?</summary>
-          <p class="muted">Absolutely — invite anyone who’d enjoy meeting people and collaborating.</p>
-        </details>
-        <details>
           <summary>Is VR required?</summary>
           <p class="muted">VR is optional. LITE runs in-browser; HD runs on Windows with optional VR.</p>
         </details>
+      </div>
+      <div class="row-cta" style="margin-top:18px;">
+        <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
       </div>
     </div>
   </section>
@@ -311,8 +313,8 @@
       <h2 class="e-h2">See You Tuesday — 7 PM Miami Time</h2>
       <p class="e-sub" style="font-weight:600">Pick your track, enter the universe, and start meeting people.</p>
       <div class="row-cta">
-        <a class="e-cta" href="#tracks">Join Next Session</a>
-        <a class="e-cta ghost" href="/whatsapp">Get Reminders</a>
+        <a class="e-cta wa" href="/whatsapp" target="_blank" rel="noopener">Join WhatsApp to Register</a>
+        <a class="e-cta ghost" href="#tracks">Explore Tracks</a>
       </div>
     </div>
   </section>
