@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title -->
+  <title>ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform</title>
+
+  <!-- Description -->
+  <meta name="description" content="Enter ALYSSIUN Virtual Universe — a metaverse social platform uniting the world through immersive experiences. Create, share, and earn." />
+
+  <!-- (Optional) Keywords -->
+  <meta name="keywords" content="ALYSSIUN, metaverse, virtual universe, immersive 3D, social platform, create share earn, VR worlds" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://alyssiun.com/test" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform" />
+  <meta property="og:description" content="Join ALYSSIUN — a metaverse social platform to create, share, and earn. Become part of the universe." />
+  <meta property="og:url" content="https://alyssiun.com/test" />
+  <meta property="og:image" content="https://alyssiun.com/assets/png/favicon-alyssiun.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform" />
+  <meta name="twitter:description" content="Join ALYSSIUN — a metaverse social platform to create, share, and earn." />
+  <meta name="twitter:image" content="https://alyssiun.com/assets/png/favicon-alyssiun.png" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/manifest.webmanifest" />
+  <meta name="theme-color" content="#0B0F24" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/png/favicon-alyssiun.png" />
+  <link rel="apple-touch-icon" href="/assets/png/icon-192.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ALYSSIUN Virtual Universe",
+    "url": "https://alyssiun.com",
+    "logo": "https://alyssiun.com/assets/png/favicon-alyssiun.png",
+    "sameAs": [
+      "https://www.youtube.com/@ALYSSIUN",
+      "https://www.instagram.com/alyssiun",
+      "https://www.facebook.com/ALYSSIUN",
+      "https://x.com/alyssiun",
+      "https://www.tiktok.com/@alyssiun"
+    ]
+  }
+  </script>
+
+  <!-- Loader for header/footer -->
+  <script>window.ALYSSIUN_BASE = '/assets/';</script>
+  <script defer src="/assets/js/includes.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <div data-include="header"></div>
+  
+  <!-- Main -->
+  <main>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+    <!-- MARKETPLACE — ALYSSIUN (paste inside <main>) -->
+    <section class="market-wrap">
+      <style>
+        /* ===== Scoped styles (only affect this block) ===== */
+        .market-wrap{
+          --bg:#0A0E22; --bg2:#060913; --panel:#121836; --panel2:#0F1431; --ink:#E8ECFF; --muted:#C8D0FF; --brand:#7AA2FF; --accent:#40CAFF;
+        }
+        .m-container{max-width:1200px;margin:0 auto;padding:0 20px;color:var(--ink);}
+        .m-hero{
+          text-align:center;padding:108px 0 80px;
+          background:
+            radial-gradient(1000px 380px at 10% 8%, rgba(64,202,255,.10), transparent 60%),
+            radial-gradient(800px 320px at 90% 8%, rgba(120,59,255,.10), transparent 60%),
+            linear-gradient(180deg,var(--bg) 0%, var(--bg2) 60%);
+        }
+        .m-h1{font-size:44px;line-height:1.1;margin:0 0 10px}
+        .m-h2{font-size:32px;line-height:1.2;margin:0}
+        .m-lead{color:var(--ink);opacity:.95}
+        .m-sub{color:var(--muted)}
+        .m-cta{display:inline-block;background:var(--brand);color:#0B0F24;font-weight:800;padding:14px 20px;border-radius:14px;text-decoration:none}
+        .m-cta.dark{background:#1C2450;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
+        .m-cta.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.22)}
+        .row-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+    
+        .section{padding:64px 0;background:var(--panel)}
+        .section.alt{background:var(--panel2)}
+        .section.bg{background:var(--bg)}
+        .center{text-align:center}
+    
+        .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:18px}
+        .card{background:#151B3E;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+        .card h3,.card h4{margin:0 0 6px}
+        .muted{color:var(--muted)}
+        .list{list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.8}
+        .grid-2{display:grid;gap:18px;grid-template-columns:1fr}
+        @media (min-width: 900px){ .grid-2{grid-template-columns:1fr 1fr} }
+    
+        .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:.9rem;color:var(--ink)}
+        .pillrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    
+        details.market-faq{background:#151B3E;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+        details.market-faq summary{cursor:pointer;font-weight:700}
+        details.market-faq p{margin:10px 0 0}
+      </style>
+    
+      <!-- HERO -->
+      <section class="m-hero">
+        <div class="m-container">
+          <h1 class="m-h1">ALYSSIUN Marketplace</h1>
+          <p class="m-lead"><strong>Get for free or sell &amp; buy — ASSETS • APPS • WORLDS • MODS</strong></p>
+          <p class="m-sub">Creator-first. Simple to publish. <strong>Keep 80%</strong> of every sale.</p>
+          <div class="row-cta">
+            <a class="m-cta" href="#categories">Browse Marketplace</a>
+            <a class="m-cta ghost" href="#publish">Become a Creator</a>
+          </div>
+          <div class="pillrow">
+            <span class="pill">Free &amp; Premium</span>
+            <span class="pill">LITE &amp; HD ready</span>
+            <span class="pill">Mods &amp; Plugins</span>
+          </div>
+        </div>
+      </section>
+    
+      <!-- WHY -->
+      <section class="section bg">
+        <div class="m-container center">
+          <h2 class="m-h2">Why the Marketplace exists</h2>
+          <p class="m-sub" style="max-width:900px;margin:10px auto 0;">
+            The Marketplace is the engine of the ALYSSIUN Universe: a curated hub where creators share what they build and communities discover what they need — from a single prop to entire worlds.
+          </p>
+          <div class="cards" style="margin-top:18px;">
+            <article class="card"><h4>Free &amp; Premium</h4><p class="muted">From quick prototypes to production-ready content.</p></article>
+            <article class="card"><h4>Creator-First</h4><p class="muted">Transparent 80/20 split in favor of creators.</p></article>
+            <article class="card"><h4>Ready for LITE &amp; HD</h4><p class="muted">Items can be tagged for web or Windows/VR workflows.</p></article>
+            <article class="card"><h4>Evolves with Mods</h4><p class="muted">Extend features and gameplay without rebuilding.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- CATEGORIES -->
+      <section id="categories" class="section">
+        <div class="m-container">
+          <h2 class="m-h2 center">Categories</h2>
+          <div class="cards">
+            <article class="card" id="assets">
+              <h3>ASSETS</h3>
+              <p class="muted">3D models, animations, textures, audio, VFX, blueprints, scene packs.</p>
+              <p class="muted"><em>Use for:</em> prototyping, dressing worlds, rapid iteration.</p>
+              <a class="m-cta dark" href="#discover">Explore Assets</a>
+            </article>
+            <article class="card" id="apps">
+              <h3>APPS</h3>
+              <p class="muted">Utilities, tools, extensions, builders, and integrations.</p>
+              <p class="muted"><em>Use for:</em> editing, management, analytics, creation workflows.</p>
+              <a class="m-cta dark" href="#discover">Explore Apps</a>
+            </article>
+            <article class="card" id="worlds">
+              <h3>WORLDS</h3>
+              <p class="muted">Complete environments — social hubs, arenas, offices, galleries, simulations.</p>
+              <p class="muted"><em>Use for:</em> instant experiences in LITE (web) or HD (Windows/VR).</p>
+              <a class="m-cta dark" href="#discover">Explore Worlds</a>
+            </article>
+            <article class="card" id="mods">
+              <h3>MODS</h3>
+              <p class="muted">Gameplay rules, systems, UI add-ons, interaction packs.</p>
+              <p class="muted"><em>Use for:</em> evolving mechanics without rebuilding your project.</p>
+              <a class="m-cta dark" href="#discover">Explore Mods</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- DISCOVERY -->
+      <section id="discover" class="section alt">
+        <div class="m-container">
+          <h2 class="m-h2 center">How discovery works</h2>
+          <div class="cards">
+            <article class="card"><h4>Featured Drops</h4><p class="muted">Editorial picks that set the bar for quality.</p></article>
+            <article class="card"><h4>Trending</h4><p class="muted">What players and teams are installing now.</p></article>
+            <article class="card"><h4>New &amp; Noteworthy</h4><p class="muted">Fresh releases from emerging creators.</p></article>
+            <article class="card"><h4>Filters &amp; Tags</h4><p class="muted">LITE/HD, VR-ready, Free/Paid, category, ratings.</p></article>
+            <article class="card"><h4>Collections</h4><p class="muted">Curated bundles (e.g., “Office Starter Pack”).</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FOR CREATORS -->
+      <section id="publish" class="section bg">
+        <div class="m-container">
+          <h2 class="m-h2 center">For creators (publish &amp; earn)</h2>
+          <div class="grid-2" style="margin-top:18px;">
+            <article class="card">
+              <h3>Create your listing</h3>
+              <ul class="list">
+                <li>Upload files, screenshots, and a short demo clip</li>
+                <li>Tag <strong>LITE</strong> (web) or <strong>HD</strong> (Windows/VR), and mark <strong>VR-ready</strong> if applicable</li>
+                <li>Choose <strong>Free</strong> or <strong>Paid</strong>, set price, and select a license</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Submit • Go Live • Get Paid</h3>
+              <ul class="list">
+                <li>Quality, performance, and safety checks protect buyers and your brand</li>
+                <li>Your item appears in search, feeds, and collections</li>
+                <li><strong>You keep 80%</strong> of every sale</li>
+              </ul>
+            </article>
+          </div>
+          <p class="m-sub center" style="max-width:880px;margin:14px auto 0;">
+            Use any tools online and/or <strong>ALYSSIUN Builder</strong>. For HD experiences, ensure your deliverable runs as described for Windows/VR.
+          </p>
+          <div class="row-cta">
+            <a class="m-cta" href="/contact">Become a Creator</a>
+            <a class="m-cta ghost" href="#categories">See Categories</a>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FOR BUYERS -->
+      <section class="section">
+        <div class="m-container">
+          <h2 class="m-h2 center">For buyers (teams, players, studios)</h2>
+          <div class="cards">
+            <article class="card"><h4>Try Free</h4><p class="muted">Install instantly; perfect for testing ideas and teaching tools.</p></article>
+            <article class="card"><h4>Buy Premium</h4><p class="muted">Production-ready quality, documentation, and support.</p></article>
+            <article class="card"><h4>One Library</h4><p class="muted">Manage installs for LITE &amp; HD in one place.</p></article>
+            <article class="card"><h4>Ratings &amp; Reviews</h4><p class="muted">Help the best work rise and keep quality high.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- LICENSES -->
+      <section class="section alt">
+        <div class="m-container">
+          <h2 class="m-h2 center">Licenses (clear &amp; simple)</h2>
+          <div class="cards">
+            <article class="card"><h4>Personal/Studio</h4><p class="muted">Use in your own projects and worlds.</p></article>
+            <article class="card"><h4>Redistribution</h4><p class="muted">Only allowed if explicitly granted by the creator.</p></article>
+            <article class="card"><h4>Attribution</h4><p class="muted">Required only when specified on the listing.</p></article>
+          </div>
+          <p class="m-sub center" style="margin-top:12px;">A clear license badge is shown on every listing.</p>
+        </div>
+      </section>
+    
+      <!-- QUALITY & SUPPORT -->
+      <section class="section bg">
+        <div class="m-container">
+          <h2 class="m-h2 center">Quality standards &amp; support</h2>
+          <div class="cards">
+            <article class="card"><h4>Performance &amp; Compatibility</h4><p class="muted">We verify LITE/HD targets and VR-ready claims.</p></article>
+            <article class="card"><h4>Accurate Listings</h4><p class="muted">Clear descriptions, versioning, and changelogs.</p></article>
+            <article class="card"><h4>Support Windows</h4><p class="muted">Creators define support duration; issues can be escalated.</p></article>
+            <article class="card"><h4>Security</h4><p class="muted">Scans on binaries/scripts where applicable; zero tolerance for infringement.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- USE CASES -->
+      <section class="section">
+        <div class="m-container">
+          <h2 class="m-h2 center">Popular use cases</h2>
+          <div class="cards">
+            <article class="card"><h4>Studios</h4><p class="muted">Kitbash environments, then layer MODS for gameplay.</p></article>
+            <article class="card"><h4>Businesses</h4><p class="muted">Equip branded offices with voice, rooms, and access tools.</p></article>
+            <article class="card"><h4>Events</h4><p class="muted">Launch temporary worlds with curated asset packs.</p></article>
+            <article class="card"><h4>Education</h4><p class="muted">Assemble labs, galleries, and scenario drills quickly.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FEATURED PATHS -->
+      <section class="section alt">
+        <div class="m-container">
+          <h2 class="m-h2 center">Featured paths</h2>
+          <div class="cards">
+            <article class="card"><h4>Starter Worlds</h4><p class="muted">Ready-to-run hubs for teams and communities.</p></article>
+            <article class="card"><h4>Simulation Kits</h4><p class="muted">Checklists, role tools, and instructor dashboards.</p></article>
+            <article class="card"><h4>Voice &amp; Presence</h4><p class="muted">Proximity tuning, radio modes, group tools.</p></article>
+            <article class="card"><h4>Creator Essentials</h4><p class="muted">Lighting, UI kits, interaction modules.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- TRUST & SAFETY -->
+      <section class="section bg">
+        <div class="m-container">
+          <h2 class="m-h2 center">Trust &amp; safety</h2>
+          <div class="cards">
+            <article class="card"><h4>Verified Creators</h4><p class="muted">Identity and quality checks for top sellers.</p></article>
+            <article class="card"><h4>Refund Guidelines</h4><p class="muted">Coverage for clearly defective items.</p></article>
+            <article class="card"><h4>Content Review</h4><p class="muted">Flagged items are evaluated quickly.</p></article>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FAQ -->
+      <section class="section">
+        <div class="m-container">
+          <h2 class="m-h2 center">FAQs</h2>
+          <div class="cards" style="margin-top:16px;">
+            <details class="market-faq">
+              <summary>Is the Marketplace free to use?</summary>
+              <p class="muted">Browsing is free. Many items are free to install. Paid items use the 80/20 creator split.</p>
+            </details>
+            <details class="market-faq">
+              <summary>What can I publish?</summary>
+              <p class="muted">ASSETS, APPS, WORLDS, and MODS that run well and match their listing.</p>
+            </details>
+            <details class="market-faq">
+              <summary>Do items work in VR?</summary>
+              <p class="muted">If marked <strong>VR-ready</strong>, they support VR in LITE (where applicable) or HD (Windows/VR).</p>
+            </details>
+            <details class="market-faq">
+              <summary>Can I use any creation tools?</summary>
+              <p class="muted">Yes. Use any tools online and/or ALYSSIUN Builder. Ensure your deliverable matches LITE or HD.</p>
+            </details>
+            <details class="market-faq">
+              <summary>How do I get paid?</summary>
+              <p class="muted">Revenue shares are processed to creators; you keep <strong>80%</strong> of every sale.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FINAL CTA -->
+      <section class="section alt">
+        <div class="m-container center">
+          <h2 class="m-h2">Build faster. Earn more.</h2>
+          <p class="m-sub" style="font-weight:600">Browse the Marketplace or publish your first item today.</p>
+          <div class="row-cta">
+            <a class="m-cta" href="#categories">Browse Marketplace</a>
+            <a class="m-cta ghost" href="#publish">Become a Creator</a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+  </main>
+
+  <!-- Footer -->
+  <div data-include="footer"></div>
+</body>
+</html>
