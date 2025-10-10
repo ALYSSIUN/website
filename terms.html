@@ -1,53 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Essential Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALYSSIUN VIRTUAL UNIVERSE</title>
-  <meta name="description" content="ALYSSIUN — a virtual universe to create, share, and explore. You don’t just enter ALYSSIUN — you become part of it."/>
-  <meta name="theme-color" content="#060913"/>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="manifest" href="/manifest.json">
-  <meta property="og:title" content="ALYSSIUN VIRTUAL UNIVERSE"/>
-  <meta property="og:description" content="ALYSSIUN — a virtual universe to create, share, and explore. You don’t just enter ALYSSIUN — you become part of it."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://alyssiun.com/"/>
-  <meta property="og:image" content="/assets/img/og-preview.png"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
 
+  <!-- Title -->
+  <title>ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform</title>
+
+  <!-- Description -->
+  <meta name="description" content="Enter ALYSSIUN Virtual Universe — a metaverse social platform uniting the world through immersive experiences. Create, share, and earn." />
+
+  <!-- (Optional) Keywords -->
+  <meta name="keywords" content="ALYSSIUN, metaverse, virtual universe, immersive 3D, social platform, create share earn, VR worlds" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://alyssiun.com/test" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform" />
+  <meta property="og:description" content="Join ALYSSIUN — a metaverse social platform to create, share, and earn. Become part of the universe." />
+  <meta property="og:url" content="https://alyssiun.com/test" />
+  <meta property="og:image" content="https://alyssiun.com/assets/png/favicon-alyssiun.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform" />
+  <meta name="twitter:description" content="Join ALYSSIUN — a metaverse social platform to create, share, and earn." />
+  <meta name="twitter:image" content="https://alyssiun.com/assets/png/favicon-alyssiun.png" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/manifest.webmanifest" />
+  <meta name="theme-color" content="#0B0F24" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/png/favicon-alyssiun.png" />
+  <link rel="apple-touch-icon" href="/assets/png/icon-192.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ALYSSIUN Virtual Universe",
+    "url": "https://alyssiun.com",
+    "logo": "https://alyssiun.com/assets/png/favicon-alyssiun.png",
+    "sameAs": [
+      "https://www.youtube.com/@ALYSSIUN",
+      "https://www.instagram.com/alyssiun",
+      "https://www.facebook.com/ALYSSIUN",
+      "https://x.com/alyssiun",
+      "https://www.tiktok.com/@alyssiun"
+    ]
+  }
+  </script>
+
+  <!-- Loader for header/footer -->
+  <script>window.ALYSSIUN_BASE = '/assets/';</script>
+  <script defer src="/assets/js/includes.js"></script>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="ALYSSIUN" /></a>
-      <nav class="nav">
-        <a href="/explore.html">Explore</a>
-        <a href="/download.html">Download</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-<main class="page wrap">
+  <!-- Header -->
+  <div data-include="header"></div>
+  
+  <!-- Main -->
+  <main>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+<div class="page wrap">
   <h1>Terms of Service</h1>
   <p>These are placeholder terms for ALYSSIUN. Replace with your legal text.</p>
-</main>
+</div>
+    <!-------------------------------------------------- Main ------------------------------------------------->
+  </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 ALYSSIUN. All rights reserved.</p>
-      <nav class="subnav">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </nav>
-    </div>
-  </footer>
-
-<script src="/assets/js/main.js" defer></script>
+  <!-- Footer -->
+  <div data-include="footer"></div>
 </body>
 </html>
