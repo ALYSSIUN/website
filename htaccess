@@ -1,73 +1,64 @@
 # =========================================================
-# ALYSSIUN Global Rewrite Configuration (.htaccess)
-# =========================================================
-# Handles:
-# - HTTPS & non-www redirection
-# - Extensionless URLs (/page → /page.html)
-# - Trailing slash normalization
-# - SPA fallback
-# - Universal 404 redirect to /404
+# ALYSSIUN — Clean URLs, Canonical Host, 404, no folders
 # =========================================================
 
-# --- Enable rewriting ---
+# Avoid MultiViews "smart" guesses that break rewrites
+Options -MultiViews
+
+# Enable rewriting
 RewriteEngine On
 
-############################################
-# 1) Canonical scheme + host (HTTPS + no www)
-############################################
+###########################################################
+# 1) Canonical scheme + host (HTTPS + non-www)
+###########################################################
 # Force HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Force non-www
+# Force non-www (use www -> bare)
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
-############################################
-# 2) Directory index
-############################################
+# Directory index for real folders
 DirectoryIndex index.html
 
-############################################
-# 3) Normalize trailing slashes
-############################################
-# /path/ -> /path.html (if file exists)
+###########################################################
+# 2) Canonical CLEAN links (no trailing slash, no .html)
+###########################################################
+# A) If the request is for /path/ but not a real directory → /path
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)/$ $1.html [L,NS,E=TRY_HTML:1]
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-# Drop trailing slash for non-dirs
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ $1 [R=301,L]
+# B) If the user directly requested a .html page → strip .html (external redirect)
+# Use THE_REQUEST so internal rewrites don't loop
+RewriteCond %{THE_REQUEST} \s/([^\s?]+?)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
 
-############################################
-# 4) Extensionless support: /path → /path.html
-############################################
+###########################################################
+# 3) Serve clean URLs from .html files (internal rewrites)
+###########################################################
+# /path  -> /path.html   (when /path.html exists and there's no real file/dir)
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-############################################
-# 5) Serve real files or directories as-is
-############################################
+# Serve real files or directories as-is
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-############################################
-# 6) SPA fallback (optional)
-############################################
-# Uncomment if you want to serve index.html for unknown routes
-# RewriteRule . /index.html [L]
+###########################################################
+# 4) 404 handling: use /404 as the public URL, serve 404.html
+###########################################################
+# Make /404 (clean URL) serve the file 404.html
+RewriteRule ^404$ /404.html [L]
 
-############################################
-# 7) Custom 404 redirect to /404
-############################################
-# When nothing matches, redirect to clean /404 (no .html)
+# Redirect any *actual* missing path to /404 (avoid loops)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/404/?$ [NC]
 RewriteRule ^ https://alyssiun.com/404 [R=302,L]
 
-# Serve 404.html when visiting /404 directly
-RewriteRule ^404$ /404.html [L]
+# Also define ErrorDocument for safety (if a 404 status is kept)
 ErrorDocument 404 /404.html
