@@ -15,13 +15,13 @@
   <meta name="keywords" content="ALYSSIUN, metaverse, virtual universe, immersive 3D, social platform, create share earn, VR worlds" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://alyssiun.com/test" />
+  <link rel="canonical" href="https://alyssiun.com/404" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ALYSSIUN Virtual Universe — Immersive Metaverse Social Platform" />
   <meta property="og:description" content="Join ALYSSIUN — a metaverse social platform to create, share, and earn. Become part of the universe." />
-  <meta property="og:url" content="https://alyssiun.com/test" />
+  <meta property="og:url" content="https://alyssiun.com/404" />
   <meta property="og:image" content="https://alyssiun.com/assets/png/favicon-alyssiun.png" />
 
   <!-- Twitter Card -->
@@ -62,22 +62,67 @@
   <!-- Loader for header/footer -->
   <script>window.ALYSSIUN_BASE = '/assets/';</script>
   <script defer src="/assets/js/includes.js"></script>
+
+  <!-- Center the 404 message -->
+  <style>
+    .notfound-wrap{min-height:50vh;display:grid;place-items:center;text-align:center;padding:48px 20px}
+    .notfound h1{font-size:42px;margin:0 0 12px}
+    .notfound .lead{opacity:.85;margin:0}
+  </style>
 </head>
 <body>
   <!-- Header -->
   <div data-include="header"></div>
-  
+
   <!-- Main -->
   <main>
-    <!-------------------------------------------------- Main ------------------------------------------------->
-<div class="page wrap center">
-  <h1>404 — Not Found</h1>
-  <p class="lead">That page drifted into the void. Return to the <a href="/">home portal</a>.</p>
-</div>
-    <!-------------------------------------------------- Main ------------------------------------------------->
+    <section class="notfound-wrap">
+      <div class="notfound">
+        <h1>404 — Not Found</h1>
+        <p class="lead">That page drifted into the void. Return to the <a href="/">home portal</a>.</p>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <div data-include="footer"></div>
+
+  <!-- Auto-fix trailing slash / extensionless URLs on static hosts -->
+  <script>
+  (async () => {
+    try {
+      const url = new URL(location.href);
+      const path = url.pathname;
+
+      const tryRedirect = async (candidate) => {
+        const r = await fetch(candidate, { method: 'HEAD', cache: 'no-store' });
+        if (r.ok) {
+          location.replace(candidate + url.search + url.hash);
+          return true;
+        }
+        return false;
+      };
+
+      // If /path/ — try /path and /path.html
+      if (path !== '/' && path.endsWith('/')) {
+        const noSlash = path.slice(0, -1);
+        if (await tryRedirect(noSlash)) return;
+        if (await tryRedirect(noSlash + '.html')) return;
+      }
+
+      // If /path (no slash, no .html) — try /path.html
+      if (!path.endsWith('/') && !path.endsWith('.html') && path !== '/') {
+        if (await tryRedirect(path + '.html')) return;
+      }
+
+      // If ends with .html but failed, try without .html
+      if (path.endsWith('.html')) {
+        const noExt = path.slice(0, -5);
+        if (await tryRedirect(noExt)) return;
+        if (await tryRedirect(noExt + '/')) return;
+      }
+    } catch(e){}
+  })();
+  </script>
 </body>
 </html>
